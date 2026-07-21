@@ -334,6 +334,10 @@
   nav.part-switcher a:last-child{ border-right:none; }
   nav.part-switcher a span{ display:block; font-size:9.5px; font-weight:400; opacity:.6; letter-spacing:.1em; margin-bottom:2px; }
   nav.part-switcher a:hover{ background:rgba(255,127,30,0.12); color:#fff; }
+  nav.part-switcher a.submit-nav-btn{
+    background:var(--saffron); color:#fff; flex:0 0 auto; padding:11px 22px;
+  }
+  nav.part-switcher a.submit-nav-btn:hover{ background:var(--saffron-dark); color:#fff; }
 
   .part-label{
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
@@ -345,7 +349,22 @@
   }
   .part-label h2{ margin:0; font-size:22px; color:var(--navy); }
   .part-label p{ margin:8px auto 0; max-width:640px; font-size:13.5px; color:var(--muted); }
-  #part2 > .part-label, #part3 > .part-label{ background:var(--bg); }
+  #summary > .part-label, #bill > .part-label{ background:var(--bg); }
+
+  .submit-cta{
+    text-align:center; background:linear-gradient(150deg,var(--navy) 0%, var(--navy-2) 100%);
+    color:#fff; border-radius:16px; padding:34px 30px; margin:0 0 8px;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  }
+  .submit-cta h2{ margin:0 0 8px; font-size:22px; color:#fff; border-bottom:none; padding-bottom:0; }
+  .submit-cta p{ margin:0 auto 20px; max-width:520px; font-size:14px; color:rgba(255,255,255,0.85); }
+  .submit-cta .submit-btn{
+    display:inline-block; background:var(--saffron); color:#fff; text-decoration:none;
+    font-weight:700; font-size:14.5px; padding:13px 32px; border-radius:30px;
+    letter-spacing:.02em; box-shadow:0 6px 18px rgba(255,127,30,0.35);
+  }
+  .submit-cta .submit-btn:hover{ background:var(--saffron-dark); }
+  .submit-cta small{ display:block; margin-top:14px; color:rgba(255,255,255,0.55); font-size:11.5px; }
 
   .plain-box{
     background:#F1F8FF; border:1px solid #CFE4F7; border-left:4px solid #1B6FC9;
@@ -354,8 +373,8 @@
   }
   .plain-box b{ color:#0B2545; }
 
-  /* ===== Part III — formal typewriter Bill ===== */
-  #part3{ background:#EFEDE4; }
+  /* ===== The Bill — formal typewriter text ===== */
+  #bill{ background:#EFEDE4; }
   .bill-paper{
     max-width:820px; margin:0 auto; background:#FBFAF5; border:1px solid #CFC9B4;
     box-shadow:0 6px 30px rgba(0,0,0,0.15);
@@ -394,18 +413,8 @@
   .bill-paper .page-no{ text-align:center; font-size:11px; color:#7a7460; margin:26px 0 -8px; letter-spacing:.1em; }
   @media print{ h2.bill-chapter{ page-break-before:always; } }
 
-  /* ===== Part II — slide deck ("PPT" style) ===== */
-  #part2 main{ background:transparent; }
-  .deck-dots{
-    display:flex; flex-wrap:wrap; gap:6px; justify-content:center; padding:14px 20px 22px;
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  }
-  .deck-dots a{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:28px; height:28px; border-radius:50%; background:#fff; border:1px solid var(--border);
-    color:var(--navy); font-size:11.5px; font-weight:700; text-decoration:none;
-  }
-  .deck-dots a:hover{ background:var(--saffron); color:#fff; border-color:var(--saffron); }
+  /* ===== Summary — one-page explainer ===== */
+  #summary main{ background:transparent; }
 
   .slide{
     background:var(--card); border:1px solid var(--border); border-radius:16px;
@@ -475,12 +484,12 @@
 <div class="draft-ribbon">Draft concept note for public discussion — not an enacted law — not an official Government of India document</div>
 
 <nav class="part-switcher">
-  <a href="#part1"><span>Part I</span>Banner</a>
-  <a href="#part2"><span>Part II</span>The Easy Way to Understand It</a>
-  <a href="#part3"><span>Part III</span>The Bill, As It Would Be Introduced</a>
+  <a href="#summary">Summary</a>
+  <a href="#bill">The Bill</a>
+  <a href="#submit" class="submit-nav-btn">Submit Your Submission</a>
 </nav>
 
-<section id="part1">
+<section id="summary">
 <header class="cover">
   <div class="emblem">⚖️ 🇮🇳</div>
   <div class="kicker">Citizen Draft &middot; Legislative Concept Note &middot; 2026</div>
@@ -501,20 +510,11 @@
     <span>Status: <strong>Discussion Draft</strong></span>
   </div>
 </header>
-</section>
 
-<section id="part2">
 <div class="part-label">
-  <div class="num">Part II</div>
+  <div class="num">In Brief</div>
   <h2>The Easy Way to Understand It</h2>
-  <p>Everything below explains the Bill in plain language first — how the chain of responsibility works, what the portal shows, what punishment looks like, and how a Minister actually loses office. Each chapter carries a short <strong>"In simple words"</strong> box. The formal legal text, clause by clause, is in <a href="#part3">Part III</a>.</p>
-</div>
-
-<div class="deck-dots">
-  <a href="#why">1</a><a href="#chain">2</a><a href="#terms">3</a><a href="#register">4</a>
-  <a href="#categories">5</a><a href="#diligence">6</a><a href="#portal">7</a><a href="#tiers">8</a>
-  <a href="#officers">9</a><a href="#appeal">10</a><a href="#removal">11</a><a href="#penalty">12</a>
-  <a href="#schedule1">13</a><a href="#safeguards">14</a><a href="#intl">15</a><a href="#cases">16</a>
+  <p>One page, plain language: why this is needed, how the chain of responsibility works, how a task gets created and tracked, what the safety rules and punishments look like, and how a Minister actually loses office. The formal legal text, clause by clause, is in <a href="#bill">The Bill</a> below.</p>
 </div>
 
 <main>
@@ -530,7 +530,6 @@
 
   <section id="why">
     <div class="slide">
-      <div class="slide-no">Slide 1 / 16</div>
       <h2 class="title">Why BHAGAT?</h2>
       <div class="lede">🗣️ Right now, when something goes wrong, everyone can blame everyone else — and often no one is punished. BHAGAT writes down, <b>in advance and in public</b>, exactly which 4 people are responsible for every task.</div>
       <div class="slide-grid">
@@ -551,13 +550,12 @@
           </div>
         </div>
       </div>
-      <div class="slide-ref">Legal text: <a href="#b1">Part III, Statement of Objects &amp; Reasons</a></div>
+      <div class="slide-ref">Legal text: <a href="#b1">The Bill, Statement of Objects &amp; Reasons</a></div>
     </div>
   </section>
 
   <section id="chain">
     <div class="slide">
-      <div class="slide-no">Slide 2 / 16</div>
       <h2 class="title">The Chain of 4 — Who Answers for What</h2>
       <div class="lede">🗣️ Four names stapled to every task. Each is judged <b>only on their own job</b> — the field officer isn't blamed for a policy decision, and the Minister can't hide behind a junior officer's mistake.</div>
       <div class="chain" style="margin:0 0 16px;">
@@ -578,40 +576,20 @@
         <div class="ar">→</div>
         <div class="box">AH/PH informed if still open past Day 30</div>
       </div>
-      <div class="slide-ref">Legal text: <a href="#b2">Part III, §3–5</a></div>
-    </div>
-  </section>
-
-  <section id="terms">
-    <div class="slide">
-      <div class="slide-no">Slide 3 / 16</div>
-      <h2 class="title">Key Terms, in One Line Each</h2>
-      <div class="glossary-grid">
-        <div class="g"><b>EO / RO / AH / PH</b>The 4‑tier chain — doer, supervisor, department head, Minister.</div>
-        <div class="g"><b>HTAC</b>The named chain of all 4, recorded against one Task.</div>
-        <div class="g"><b>Task Accountability Register</b>The public ledger of every Task and its HTAC.</div>
-        <div class="g"><b>Own‑Duty Failure</b>Failing your own assigned job — not someone else's.</div>
-        <div class="g"><b>Accountability Officer</b>A single officer (District/State/Central) who inquires &amp; recommends.</div>
-        <div class="g"><b>Technical Member</b>An expert who advises the Officer — no vote, no veto.</div>
-        <div class="g"><b>Due Diligence Certificate</b>Proof all safety pre‑checks were done, before starting.</div>
-        <div class="g"><b>Dry Run</b>A rehearsed trial run, before opening to the public.</div>
-        <div class="g"><b>3 Pillars</b>Governance (decision), Administration (doing), Transparency (disclosure).</div>
-        <div class="g"><b>Portal</b>bhagat.nic.in — the public window into all of this.</div>
-      </div>
-      <div class="slide-ref">Legal text: <a href="#b1">Part III, §2 (Definitions)</a></div>
+      <div class="slide-ref">Legal text: <a href="#b2">The Bill, §3–5</a></div>
     </div>
   </section>
 
   <section id="register">
     <div class="slide">
-      <div class="slide-no">Slide 4 / 16</div>
-      <h2 class="title">Registering a Task, Before Work Starts</h2>
+      <h2 class="title">How a Task Gets Created &amp; Tracked</h2>
+      <div class="lede">🗣️ Every task lives inside a government <b>File</b>. The moment that File opens, it must be registered on the Portal with a Task ID and named officers — before work begins, not after something goes wrong.</div>
       <div class="slide-grid">
         <ul class="bullets">
-          <li>Every task above a set size gets a <b>unique Task ID</b>.</li>
-          <li>All 4 HTAC names are published <b>before</b> work begins.</li>
-          <li>Budget, deadline, and milestones are on record from day one.</li>
+          <li>Opening a File on a qualifying matter <b>creates the Task</b> and starts the clock.</li>
+          <li>Named officers, budget, deadline and milestones go on record on day one.</li>
           <li>A durable <b>site board + QR code</b> is put up at the actual worksite.</li>
+          <li>On the Portal: search by ID, QR, map or category — budget tracker, grievance tracker, safety‑certificate archive, and Ministerial scorecard, all in one place.</li>
         </ul>
         <div class="qrcard" style="margin:0;">
           <div class="box">▦</div>
@@ -622,37 +600,13 @@
           </div>
         </div>
       </div>
-      <div class="slide-ref">Legal text: <a href="#b2">Part III, §3–5</a></div>
-    </div>
-  </section>
-
-  <section id="categories">
-    <div class="slide">
-      <div class="slide-no">Slide 5 / 16</div>
-      <h2 class="title">6 Task Categories, 3 Pillars</h2>
-      <div class="icon-grid" style="margin:0 0 16px;">
-        <div class="item"><div class="ico">🏗️</div><div class="lbl">A · Infrastructure</div><div class="sub">roads, bridges, metro</div></div>
-        <div class="item"><div class="ico">🎪</div><div class="lbl">B · Events</div><div class="sub">melas, rallies, VVIP</div></div>
-        <div class="item"><div class="ico">📝</div><div class="lbl">C · Exams</div><div class="sub">public examinations</div></div>
-        <div class="item"><div class="ico">📋</div><div class="lbl">D · Clearances</div><div class="sub">environment, land, safety</div></div>
-        <div class="item"><div class="ico">🔍</div><div class="lbl">E · Investigations</div><div class="sub">criminal, administrative</div></div>
-        <div class="item"><div class="ico">🔁</div><div class="lbl">F · Recurring Services</div><div class="sub">PDS, water, health, police</div></div>
-      </div>
-      <div class="mini-flow">
-        <div class="box"><b>Governance</b><br/>the decision &amp; budget</div>
-        <div class="ar">+</div>
-        <div class="box"><b>Administration</b><br/>the doing &amp; supervising</div>
-        <div class="ar">+</div>
-        <div class="box"><b>Transparency</b><br/>the disclosing &amp; reporting</div>
-      </div>
-      <div class="slide-ref">Legal text: <a href="#b3">Part III, §6–7</a></div>
+      <div class="slide-ref">Legal text: <a href="#b2">The Bill, §3, 6–9</a></div>
     </div>
   </section>
 
   <section id="diligence">
     <div class="slide">
-      <div class="slide-no">Slide 6 / 16</div>
-      <h2 class="title">Rehearse First, Open Later</h2>
+      <h2 class="title">Rehearse First, Open Later — and Penalties by Tier</h2>
       <div class="lede">🗣️ Before a metro opens or a mela starts, someone signs a safety checklist — <b>publicly</b>. Skipping it is punishable even if nothing goes wrong.</div>
       <div class="mini-flow" style="margin-bottom:14px;">
         <div class="box">Safety docs certified (EO logs, RO verifies)</div>
@@ -668,110 +622,21 @@
         <div class="ar">→</div>
         <div class="box">Inquiry then decides who, if anyone, is at fault</div>
       </div>
-      <div class="slide-ref">Legal text: <a href="#b3">Part III, §8–11</a></div>
-    </div>
-  </section>
-
-  <section id="portal">
-    <div class="slide">
-      <div class="slide-no">Slide 7 / 16</div>
-      <h2 class="title">One Website: bhagat.nic.in</h2>
-      <div class="lede">🗣️ Type in "my road," "this exam," or "this FIR" — see who's responsible, the deadline, and file a complaint if it's missed. Like tracking a delivery, but for government work.</div>
-      <div class="portal-mock" style="margin:0;">
-        <div class="browserbar">
-          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-          <div class="url">🔒 bhagat.nic.in/task/RJ‑PWD‑2026‑00417</div>
-        </div>
-        <div class="screen">
-          <div class="portal-features">
-            <div class="feat"><b>Task &amp; HTAC lookup</b>Search by ID, QR, map, or category.</div>
-            <div class="feat"><b>Budget tracker</b>Sanctioned vs. actual spend, flagged live.</div>
-            <div class="feat"><b>Grievance &amp; appeal tracker</b>File, then watch it move with live timers.</div>
-            <div class="feat"><b>Safety certificate archive</b>Every Dry Run &amp; due‑diligence certificate.</div>
-            <div class="feat"><b>Fatality/injury tracker</b>Live FIR, suspension &amp; compensation status.</div>
-            <div class="feat"><b>Ministerial scorecard</b>Every Minister's public accountability record.</div>
-          </div>
-        </div>
-      </div>
-      <div class="slide-ref">Legal text: <a href="#b4">Part III, §12–14</a></div>
-    </div>
-  </section>
-
-  <section id="tiers">
-    <div class="slide">
-      <div class="slide-no">Slide 8 / 16</div>
-      <h2 class="title">Four Tiers, and Who Pays for a Budget Overrun</h2>
-      <table style="margin:0 0 16px;">
-        <tr><th>Tier</th><th>Answerable to</th></tr>
-        <tr><td><span class="pill ph">PH</span> Minister</td><td>Parliament &amp; the public</td></tr>
-        <tr><td><span class="pill ah">AH</span> Secretary/HoD</td><td>Accountability Officer &amp; legislative committees</td></tr>
-        <tr><td><span class="pill ro">RO</span> Supervisor</td><td>Accountability Officer</td></tr>
-        <tr><td><span class="pill eo">EO</span> Field officer</td><td>The public, directly, via the Portal</td></tr>
-      </table>
-      <div class="mini-flow">
-        <div class="box">Project runs over budget</div>
-        <div class="ar">→</div>
-        <div class="box hot">Cause = planning mistake?<br/><small>EO/RO punished</small></div>
-        <div class="ar">/</div>
-        <div class="box hot">Cause = government changed the plan?<br/><small>Minister explains, 30 days, House + Portal</small></div>
-      </div>
-      <div class="slide-ref">Legal text: <a href="#b5">Part III, §15–17</a></div>
-    </div>
-  </section>
-
-  <section id="officers">
-    <div class="slide">
-      <div class="slide-no">Slide 9 / 16</div>
-      <h2 class="title">One Officer, Not a Committee</h2>
-      <div class="lede">🗣️ No faceless committees. One named officer per level looks into failures and tells the government what to do — with expert help, but the responsibility is theirs alone.</div>
-      <div class="chain" style="margin:0 0 14px;">
-        <div class="step eo"><div class="role">District</div><div class="who">DAO</div><div class="duty">Rank of a District Judge · removed like one</div></div>
-        <div class="chain-arrow">→</div>
-        <div class="step ro"><div class="role">State</div><div class="who">SAO</div><div class="duty">High Court Judge (sitting/retired) · removed like one</div></div>
-        <div class="chain-arrow">→</div>
-        <div class="step ah"><div class="role">Central</div><div class="who">CAO</div><div class="duty">Supreme Court Judge (sitting/retired) · removed like one</div></div>
-      </div>
-      <ul class="bullets" style="margin-bottom:0;">
-        <li>Assisted by <b>Technical Members</b> — advisory only, no vote.</li>
-        <li>Issues a <b>Reasoned Recommendation</b>, never a binding order — dismissal still follows Article 311.</li>
-        <li>Can summon witnesses &amp; records; refers corruption findings to the anti‑corruption authority.</li>
-        <li>Government must act, or publish its reasons for not acting, within <b>30 days</b>.</li>
-      </ul>
-      <div class="slide-ref">Legal text: <a href="#b6">Part III, §18–23</a></div>
-    </div>
-  </section>
-
-  <section id="appeal">
-    <div class="slide">
-      <div class="slide-no">Slide 10 / 16</div>
-      <h2 class="title">Two‑Stage Appeal, Then a Punishment</h2>
-      <div class="lede">🗣️ First complain within the department. Stuck? Escalate to a fully independent officer outside it. Punishment ranges from a warning to dismissal.</div>
-      <div class="appeal-flow" style="margin:0 0 16px;">
-        <div class="stage">
-          <span class="tag2">Stage 1</span>
-          <h4>Departmental Appeal</h4>
-          <p>Senior officer, not the RO/EO concerned. Decision in 30 days, published.</p>
-        </div>
-        <div class="arrow">→</div>
-        <div class="stage">
-          <span class="tag2">Stage 2 — Independent</span>
-          <h4>District/State/Central Accountability Officer</h4>
-          <p>Outside the department's chain of command. Recommendation in 90 days.</p>
-        </div>
-      </div>
+      <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:13px; color:var(--muted); margin:14px 0;">Every failure gets a <b>two-stage appeal</b> — departmental first, then a fully independent District/State/Central Accountability Officer — before any of the punishments below are finalised.</p>
       <table style="margin:0;">
-        <tr><th>Class</th><th>Punishment</th></tr>
-        <tr><td><span class="pill minor">Minor</span></td><td>Censure · withheld increment/promotion</td></tr>
-        <tr><td><span class="pill major">Major</span></td><td>Demotion · recovery of loss · compulsory retirement</td></tr>
-        <tr><td><span class="pill extreme">Extreme</span></td><td>Removal/dismissal · criminal prosecution referral</td></tr>
+        <tr><th>Tier</th><th>Minor</th><th>Major</th><th>Extreme</th></tr>
+        <tr><td><span class="pill eo">EO</span></td><td>Censure + corrective plan</td><td>Withheld increment, demotion</td><td>Suspension → dismissal + criminal referral</td></tr>
+        <tr><td><span class="pill ro">RO</span></td><td>Censure</td><td>Recovery of loss</td><td>Compulsory retirement</td></tr>
+        <tr><td><span class="pill ah">AH</span></td><td>Reprimand</td><td>Corrective action plan</td><td>Referral to disciplinary authority</td></tr>
+        <tr><td><span class="pill ph">PH</span></td><td>—</td><td>—</td><td>Statement of Task Failure before the House + public</td></tr>
       </table>
-      <div class="slide-ref">Legal text: <a href="#b7">Part III, §24–26</a></div>
+      <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:12.5px; color:var(--muted); margin:10px 0 0;">Runs alongside — not instead of — criminal prosecution where the conduct is also a crime.</p>
+      <div class="slide-ref">Legal text: <a href="#b2">The Bill, §12–15</a> &middot; <a href="#b4">§24–28</a></div>
     </div>
   </section>
 
   <section id="removal">
     <div class="slide">
-      <div class="slide-no">Slide 11 / 16</div>
       <h2 class="title">How a Minister Actually Leaves Office</h2>
       <div class="lede">🗣️ Only the PM/CM can effectively remove a Minister — no law can change that. BHAGAT keeps a public scorecard instead, forcing that choice into daylight.</div>
       <div class="appeal-flow">
@@ -793,105 +658,16 @@
           <p>Record goes to PM/CM &amp; Speaker — 30 days to remove, or publicly justify keeping the Minister.</p>
         </div>
       </div>
-      <div class="slide-ref">Legal text: <a href="#b8">Part III, §28–30</a></div>
+      <div class="slide-ref">Legal text: <a href="#b5">The Bill, §29–31</a></div>
     </div>
   </section>
 
-  <section id="penalty">
-    <div class="slide">
-      <div class="slide-no">Slide 12 / 16</div>
-      <h2 class="title">Penalty Scales With Harm, by Tier</h2>
-      <table style="margin:0;">
-        <tr><th>Tier</th><th>Minor</th><th>Major</th><th>Extreme</th></tr>
-        <tr><td><span class="pill eo">EO</span></td><td>Censure + corrective plan</td><td>Withheld increment, demotion</td><td>Suspension → dismissal + criminal referral</td></tr>
-        <tr><td><span class="pill ro">RO</span></td><td>Censure</td><td>Recovery of loss</td><td>Compulsory retirement</td></tr>
-        <tr><td><span class="pill ah">AH</span></td><td>Reprimand</td><td>Corrective action plan</td><td>Referral to disciplinary authority</td></tr>
-        <tr><td><span class="pill ph">PH</span></td><td>—</td><td>—</td><td>Statement of Task Failure before the House + public</td></tr>
-      </table>
-      <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:12.5px; color:var(--muted); margin:10px 0 0;">Runs alongside — not instead of — criminal prosecution where the conduct is also a crime.</p>
-      <div class="slide-ref">Legal text: <a href="#b7">Part III, §26–27</a></div>
-    </div>
-  </section>
-
-  <section id="schedule1">
-    <div class="slide">
-      <div class="slide-no">Slide 13 / 16</div>
-      <h2 class="title">Who's Responsible for What — a Quick Map</h2>
-      <table style="margin:0;">
-        <tr><th>Task</th><th><span class="pill eo">EO</span></th><th><span class="pill ro">RO</span></th><th><span class="pill ph">PH</span></th></tr>
-        <tr><td>Criminal case</td><td>Investigating Officer</td><td>SP</td><td>Home Minister</td></tr>
-        <tr><td>Road/bridge</td><td>Site Engineer</td><td>Exec. Engineer</td><td>PWD Minister</td></tr>
-        <tr><td>New metro/bridge opening</td><td>Project Engineer</td><td>Safety Certifying Officer</td><td>Concerned Minister</td></tr>
-        <tr><td>National exam</td><td>Centre Superintendent</td><td>Controller of Exams</td><td>Education Minister</td></tr>
-        <tr><td>Mass gathering</td><td>Ground Control Officer</td><td>District Magistrate</td><td>Home Minister</td></tr>
-        <tr><td>Elections</td><td>Presiding Officer</td><td>Returning Officer</td><td><em>— Election Commission —</em></td></tr>
-      </table>
-      <div class="slide-ref">Legal text: <a href="#bsched">Part III, The Schedule</a></div>
-    </div>
-  </section>
-
-  <section id="safeguards">
-    <div class="slide">
-      <div class="slide-no">Slide 14 / 16</div>
-      <h2 class="title">Safeguards &amp; Boundaries</h2>
-      <ul class="bullets">
-        <li><b>Whistle‑blowers</b> are protected from victimisation; identity is concealed during inquiry.</li>
-        <li><b>False or frivolous complaints</b> carry a penalty, to stop misuse.</li>
-        <li>BHAGAT <b>adds to</b>, never replaces, existing anti‑corruption and information‑disclosure law.</li>
-        <li>Ministerial responsibility to Parliament (Art. 75(3)/164(2)) is <b>not diluted</b>.</li>
-        <li>The <b>Election Commission stays fully independent</b> (Art. 324) — no Political Head is attached to election‑day tasks.</li>
-      </ul>
-      <div class="slide-ref">Legal text: <a href="#b9">Part III, §31–35</a></div>
-    </div>
-  </section>
-
-  <section id="intl">
-    <div class="slide">
-      <div class="slide-no">Slide 15 / 16</div>
-      <h2 class="title">Not a New Idea — Other Democracies Do Parts of This</h2>
-      <div class="country-grid">
-        <div class="c"><div class="flag">🇬🇧 United Kingdom</div><div class="mech">Accounting Officer</div><p>Top civil servant is personally accountable to Parliament for spending — separate from the Minister.</p></div>
-        <div class="c"><div class="flag">🇸🇪 Sweden</div><div class="mech">Parliamentary Ombudsman (1809)</div><p>World's oldest ombudsman — a single independent officer, not a committee.</p></div>
-        <div class="c"><div class="flag">🇸🇬 Singapore</div><div class="mech">CPIB</div><p>Independent, fast, and severe — a real deterrent, not a paper process.</p></div>
-        <div class="c"><div class="flag">🇳🇿 New Zealand</div><div class="mech">Chief Executive agreements</div><p>Named, personal, public performance targets for top officials.</p></div>
-        <div class="c"><div class="flag">🇺🇸 United States</div><div class="mech">Inspector General Act</div><p>Independent watchdog inside every major federal agency.</p></div>
-        <div class="c"><div class="flag">🇪🇪 Estonia</div><div class="mech">X‑Road</div><p>Every official access to your data is logged and visible to you.</p></div>
-        <div class="c"><div class="flag">🇦🇺 Australia</div><div class="mech">National Anti‑Corruption Commission</div><p>Independent reach up to the political level.</p></div>
-        <div class="c"><div class="flag">🇷🇼🇬🇪 Rwanda &amp; Georgia</div><div class="mech">Digitised civil service reform</div><p>Proof that digital, task‑level transparency changes outcomes fast.</p></div>
-      </div>
-      <div class="slide-ref">Full comparison table: <a href="#b1">Schedule IV, Comparative Study</a></div>
-    </div>
-  </section>
-
-  <section id="cases">
-    <div class="slide">
-      <div class="slide-no">Slide 16 / 16</div>
-      <h2 class="title">5 Real Situations, Worked Through</h2>
-      <div class="story-strip">
-        <span class="tag">1 · Unsolved criminal case</span>
-        <div class="roles"><span class="pill eo">EO</span><span class="pill ro">RO</span><span class="pill ah faded">AH</span><span class="pill ph faded">PH</span></div>
-        <p>Day 30, no arrest, no recorded cause → auto‑flagged. EO punished if he didn't investigate; SP punished separately if reviews/resources were skipped — independently, for different reasons.</p>
-      </div>
-      <div class="story-strip">
-        <span class="tag">2 · Leaked national exam</span>
-        <div class="roles"><span class="pill eo">EO</span><span class="pill ro">RO</span><span class="pill ah">AH</span><span class="pill ph">PH</span></div>
-        <p>Verified leak = Extreme failure for all 4: Centre Superintendent and Exam Controller face dismissal‑level inquiry; the Secretary defends the system; the Minister tables a public Statement within 15 days.</p>
-      </div>
-      <div class="story-strip">
-        <span class="tag">3 · Election‑day failure</span>
-        <div class="roles"><span class="pill eo">EO</span><span class="pill ro">RO</span><span class="pill ah">AH</span><span class="pill ph faded">PH —</span></div>
-        <p>Booth failures escalate to the Chief Electoral Officer. No Minister attached — elections stay under the EC's independent constitutional authority.</p>
-      </div>
-      <div class="story-strip">
-        <span class="tag">4 · Bridge, ₹80cr → ₹110cr</span>
-        <div class="roles"><span class="pill eo faded">EO</span><span class="pill ro faded">RO</span><span class="pill ah">AH</span><span class="pill ph">PH</span></div>
-        <p>Cause = a mid‑project government policy change, not EO/RO error → the Minister, not the engineer, must justify it to Parliament and the public within 30 days.</p>
-      </div>
-      <div class="story-strip">
-        <span class="tag">5 · Maha Kumbh stampede (Jan 2025, modelled on real events)</span>
-        <div class="roles"><span class="pill extreme">Extreme</span><span class="pill eo">EO</span><span class="pill ro">RO</span></div>
-        <p>37+ deaths; under BHAGAT this is an automatic Fatality Protocol trigger — FIR mandatory, named officer pays compensation within 15 days, not after a year of litigation.</p>
-      </div>
+  <section id="submit">
+    <div class="submit-cta">
+      <h2>Support or Comment on This Draft</h2>
+      <p>This is a citizen-drafted concept note, not a Bill before Parliament. If you support the idea, want to suggest a change, or want to help take it further, submit your name and comments below.</p>
+      <a class="submit-btn" href="PASTE_YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener">Submit Your Submission →</a>
+      <small>Opens a short Google Form — name, email, and your comment or support statement.</small>
     </div>
   </section>
 
@@ -899,9 +675,9 @@
 
 </section>
 
-<section id="part3">
+<section id="bill">
 <div class="part-label">
-  <div class="num">Part III</div>
+  <div class="num">The Bill</div>
   <h2>The Bill, As It Would Be Introduced in Parliament</h2>
   <p>This is the same Act, set out the way an actual Government Bill is typeset and tabled in the Lok Sabha — Bill number, long title, enacting formula, an Arrangement of Clauses, numbered clauses and sub‑clauses, a Schedule, and the three memoranda every Indian Bill carries: Statement of Objects and Reasons, Financial Memorandum, and Memorandum Regarding Delegated Legislation.</p>
 </div>
@@ -925,50 +701,55 @@
   <div class="toc-chapter" style="font-weight:400; font-style:italic; text-transform:none; margin-top:0;">Chapter I — Preliminary</div>
   <div class="toc-entry"><span class="tn">1.</span><span class="tt">Short title, extent and commencement.</span></div>
   <div class="toc-entry"><span class="tn">2.</span><span class="tt">Definitions.</span></div>
-  <div class="toc-chapter">Chapter II — The Task Accountability Register</div>
+  <div class="toc-chapter">Chapter II — The Task Accountability Register and Obligations of Public Authorities</div>
   <div class="toc-entry"><span class="tn">3.</span><span class="tt">Registration of Public Tasks and the Hierarchical Task Accountability Chain.</span></div>
-  <div class="toc-entry"><span class="tn">4.</span><span class="tt">Liability confined to own duty.</span></div>
-  <div class="toc-entry"><span class="tn">5.</span><span class="tt">Display of Task information at site and interoperability of the Register.</span></div>
-  <div class="toc-chapter">Chapter III — Task Categories, Due Diligence and Dry Runs</div>
-  <div class="toc-entry"><span class="tn">6.</span><span class="tt">Classification of Public Tasks into categories.</span></div>
-  <div class="toc-entry"><span class="tn">7.</span><span class="tt">Pillar tagging — Governance, Administration and Transparency.</span></div>
-  <div class="toc-entry"><span class="tn">8.</span><span class="tt">Due diligence certification.</span></div>
-  <div class="toc-entry"><span class="tn">9.</span><span class="tt">Mandatory dry run before commissioning.</span></div>
-  <div class="toc-entry"><span class="tn">10.</span><span class="tt">Consequence of non‑compliance with sections 8 and 9.</span></div>
-  <div class="toc-entry"><span class="tn">11.</span><span class="tt">Protocol on death or grievous hurt arising from a Public Task.</span></div>
-  <div class="toc-chapter">Chapter IV — Public Disclosure and the Portal</div>
-  <div class="toc-entry"><span class="tn">12.</span><span class="tt">Proactive disclosure.</span></div>
-  <div class="toc-entry"><span class="tn">13.</span><span class="tt">Establishment and functions of the Portal.</span></div>
-  <div class="toc-entry"><span class="tn">14.</span><span class="tt">Grievance filing through the Portal.</span></div>
-  <div class="toc-chapter">Chapter V — Tiers of Accountability and Budgetary Discipline</div>
-  <div class="toc-entry"><span class="tn">15.</span><span class="tt">The four tiers of accountability.</span></div>
+  <div class="toc-entry"><span class="tn">4.</span><span class="tt">The four tiers of accountability.</span></div>
+  <div class="toc-entry"><span class="tn">5.</span><span class="tt">Liability confined to own duty.</span></div>
+  <div class="toc-entry"><span class="tn">6.</span><span class="tt">Display of Task information at site and interoperability of the Register.</span></div>
+  <div class="toc-entry"><span class="tn">7.</span><span class="tt">Obligations of public authorities — proactive disclosure.</span></div>
+  <div class="toc-entry"><span class="tn">8.</span><span class="tt">Establishment and functions of the Portal.</span></div>
+  <div class="toc-entry"><span class="tn">9.</span><span class="tt">Grievance filing and disposal through the Portal.</span></div>
+  <div class="toc-entry"><span class="tn">10.</span><span class="tt">Classification of Public Tasks into categories.</span></div>
+  <div class="toc-entry"><span class="tn">11.</span><span class="tt">Pillar tagging — Governance, Administration and Transparency.</span></div>
+  <div class="toc-entry"><span class="tn">12.</span><span class="tt">Due diligence certification.</span></div>
+  <div class="toc-entry"><span class="tn">13.</span><span class="tt">Mandatory dry run before commissioning.</span></div>
+  <div class="toc-entry"><span class="tn">14.</span><span class="tt">Consequence of non‑compliance with sections 12 and 13.</span></div>
+  <div class="toc-entry"><span class="tn">15.</span><span class="tt">Protocol on death or grievous hurt arising from a Public Task.</span></div>
   <div class="toc-entry"><span class="tn">16.</span><span class="tt">Recording of budget and time overruns.</span></div>
   <div class="toc-entry"><span class="tn">17.</span><span class="tt">Escalation of policy‑caused overruns to the political head.</span></div>
-  <div class="toc-chapter">Chapter VI — Accountability Officers</div>
+  <div class="toc-chapter">Chapter III — The Accountability Officers</div>
   <div class="toc-entry"><span class="tn">18.</span><span class="tt">District, State and Central Accountability Officers.</span></div>
-  <div class="toc-entry"><span class="tn">19.</span><span class="tt">Qualifications, rank and independence.</span></div>
+  <div class="toc-entry"><span class="tn">19.</span><span class="tt">Qualifications, rank, independence and oath of office.</span></div>
   <div class="toc-entry"><span class="tn">20.</span><span class="tt">Technical Members.</span></div>
+  <div class="toc-chapter">Chapter IV — Powers and Functions of the Accountability Officers, Appeal and Penalties</div>
   <div class="toc-entry"><span class="tn">21.</span><span class="tt">Jurisdiction, powers of inquiry, and reference of corruption matters.</span></div>
   <div class="toc-entry"><span class="tn">22.</span><span class="tt">Reasoned recommendation to the competent Government authority.</span></div>
   <div class="toc-entry"><span class="tn">23.</span><span class="tt">Duty of Government on receipt of a recommendation.</span></div>
-  <div class="toc-chapter">Chapter VII — Appeals and Punishments</div>
   <div class="toc-entry"><span class="tn">24.</span><span class="tt">Departmental appeal.</span></div>
   <div class="toc-entry"><span class="tn">25.</span><span class="tt">Second appeal to the Accountability Officer.</span></div>
   <div class="toc-entry"><span class="tn">26.</span><span class="tt">Graded schedule of punishments.</span></div>
-  <div class="toc-entry"><span class="tn">27.</span><span class="tt">Statement of Task Failure before the House.</span></div>
-  <div class="toc-chapter">Chapter VIII — Removal of a Political Head from Office</div>
-  <div class="toc-entry"><span class="tn">28.</span><span class="tt">Ministerial Accountability Record.</span></div>
-  <div class="toc-entry"><span class="tn">29.</span><span class="tt">Mandatory review hearing.</span></div>
-  <div class="toc-entry"><span class="tn">30.</span><span class="tt">Transmission to the House and the Head of Government; saving of constitutional procedure.</span></div>
-  <div class="toc-chapter">Chapter IX — Miscellaneous</div>
-  <div class="toc-entry"><span class="tn">31.</span><span class="tt">Protection of persons acting in good faith.</span></div>
-  <div class="toc-entry"><span class="tn">32.</span><span class="tt">Penalty for false or frivolous complaints.</span></div>
-  <div class="toc-entry"><span class="tn">33.</span><span class="tt">Relationship with other laws.</span></div>
-  <div class="toc-entry"><span class="tn">34.</span><span class="tt">Ministerial responsibility to the House not affected.</span></div>
-  <div class="toc-entry"><span class="tn">35.</span><span class="tt">Independence of the Election Commission preserved.</span></div>
-  <div class="toc-entry"><span class="tn">36.</span><span class="tt">Power to make rules.</span></div>
-  <div class="toc-entry"><span class="tn">37.</span><span class="tt">Power to remove difficulties.</span></div>
-  <div class="toc-entry"><span class="tn">—</span><span class="tt">THE SCHEDULE — Illustrative Hierarchical Task Accountability Chain map.</span></div>
+  <div class="toc-entry"><span class="tn">27.</span><span class="tt">Daily penalty for delay or default.</span></div>
+  <div class="toc-entry"><span class="tn">28.</span><span class="tt">Statement of Task Failure before the House.</span></div>
+  <div class="toc-chapter">Chapter V — Removal of a Political Head from Office</div>
+  <div class="toc-entry"><span class="tn">29.</span><span class="tt">Ministerial Accountability Record.</span></div>
+  <div class="toc-entry"><span class="tn">30.</span><span class="tt">Mandatory review hearing.</span></div>
+  <div class="toc-entry"><span class="tn">31.</span><span class="tt">Transmission to the House and the Head of Government; saving of constitutional procedure.</span></div>
+  <div class="toc-chapter">Chapter VI — Miscellaneous</div>
+  <div class="toc-entry"><span class="tn">32.</span><span class="tt">Protection of persons acting in good faith.</span></div>
+  <div class="toc-entry"><span class="tn">33.</span><span class="tt">Penalty for false or frivolous complaints.</span></div>
+  <div class="toc-entry"><span class="tn">34.</span><span class="tt">Act to have overriding effect.</span></div>
+  <div class="toc-entry"><span class="tn">35.</span><span class="tt">Relationship with other laws.</span></div>
+  <div class="toc-entry"><span class="tn">36.</span><span class="tt">Ministerial responsibility to the House not affected.</span></div>
+  <div class="toc-entry"><span class="tn">37.</span><span class="tt">Independence of the Election Commission preserved.</span></div>
+  <div class="toc-entry"><span class="tn">38.</span><span class="tt">Act not to require public disclosure in relation to certain organisations.</span></div>
+  <div class="toc-entry"><span class="tn">39.</span><span class="tt">Monitoring and annual reporting.</span></div>
+  <div class="toc-entry"><span class="tn">40.</span><span class="tt">Power to make rules by appropriate Government.</span></div>
+  <div class="toc-entry"><span class="tn">41.</span><span class="tt">Power to make rules by constitutional authority.</span></div>
+  <div class="toc-entry"><span class="tn">42.</span><span class="tt">Laying of rules.</span></div>
+  <div class="toc-entry"><span class="tn">43.</span><span class="tt">Power to remove difficulties.</span></div>
+  <div class="toc-entry"><span class="tn">—</span><span class="tt">THE FIRST SCHEDULE — Form of oath or affirmation for Accountability Officers.</span></div>
+  <div class="toc-entry"><span class="tn">—</span><span class="tt">THE SECOND SCHEDULE — Organisations to which section 38 applies.</span></div>
+  <div class="toc-entry"><span class="tn">—</span><span class="tt">THE THIRD SCHEDULE — Illustrative Hierarchical Task Accountability Chain map.</span></div>
 
   <hr/>
   <div class="page-no">— 2 —</div>
@@ -989,7 +770,7 @@
     <span class="bill-sub">(f) "Political Head" means the Minister‑in‑charge responsible, before Parliament or the State Legislature and before the public, for the policy and budgetary decisions governing a Public Task;</span>
     <span class="bill-sub">(g) "Accountability Officer" means a District, State or Central Accountability Officer appointed under section 18;</span>
     <span class="bill-sub">(h) "Technical Member" means a subject‑matter expert attached to an Accountability Officer under section 20;</span>
-    <span class="bill-sub">(i) "Portal" means the public digital platform established under section 13 and known as bhagat.nic.in;</span>
+    <span class="bill-sub">(i) "Portal" means the public digital platform established under section 8 and known as bhagat.nic.in;</span>
     <span class="bill-sub">(j) "Governance Pillar" means that aspect of a Public Task concerning the policy, budgetary or design decision to undertake it;</span>
     <span class="bill-sub">(k) "Administration Pillar" means that aspect of a Public Task concerning its execution and supervision on the ground;</span>
     <span class="bill-sub">(l) "Transparency Pillar" means that aspect of a Public Task concerning its disclosure, registration and reporting to the public;</span>
@@ -1002,25 +783,47 @@
   <div class="page-no">— 3 —</div>
 
   <h2 class="bill-chapter" id="b2">Chapter II</h2>
-  <h3 class="bill-chapter-title">The Task Accountability Register</h3>
+  <h3 class="bill-chapter-title">The Task Accountability Register and Obligations of Public Authorities</h3>
 
-  <p class="bill-clause"><span class="marginal">Registration of Public Tasks and the Hierarchical Task Accountability Chain.</span><span class="cn">3.</span> (1) Every Public Task meeting such threshold of public impact as may be prescribed shall, before it commences, be registered on the Portal with a unique identification number.<br/>
+  <p class="bill-clause"><span class="marginal">Registration of Public Tasks and the Hierarchical Task Accountability Chain.</span><span class="cn">3.</span> (1) Every Public Task meeting such threshold of public impact as may be prescribed shall, within thirty days of being sanctioned, ordered or otherwise authorised, be registered on the Portal with a unique identification number, and in any case before it commences.<br/>
   (2) Every registration under sub‑section (1) shall name, by post and by officer where known, the Executive Officer, the Reviewing Officer, the Administrative Head and the Political Head constituting the Hierarchical Task Accountability Chain for that Task, together with the timeline and outcome by which its performance shall be judged.<br/>
-  (3) Where a Public Task is a criminal investigation, the Executive Officer shall be the Investigating or Circle Officer, the Reviewing Officer shall be the Superintendent of Police or equivalent, and the statutory target for identification of an accused shall be thirty days from registration of the first information report, subject to such extension as may be recorded and published on the Portal with reasons.</p>
+  (3) Where a Public Task is a criminal investigation, the Executive Officer shall be the Investigating or Circle Officer, the Reviewing Officer shall be the Superintendent of Police or equivalent, and the statutory target for identification of an accused shall be thirty days from registration of the first information report, subject to such extension as may be recorded and published on the Portal with reasons.<br/>
+  (4) Failure to register a Public Task within the period specified in sub‑section (1) shall be deemed, for the purposes of Chapter IV, to be a default of the Reviewing Officer.</p>
 
-  <p class="bill-clause"><span class="marginal">Liability confined to own duty.</span><span class="cn">4.</span> (1) No officer or Political Head in the Hierarchical Task Accountability Chain of a Public Task shall be liable under this Act for a failure that is not attributable to the duty specifically assigned to that officer or Political Head under section 3.<br/>
+  <p class="bill-clause"><span class="marginal">The four tiers of accountability.</span><span class="cn">4.</span> The Hierarchical Task Accountability Chain of every Public Task shall comprise, and no more than, the following four tiers: the Executive Officer, the Reviewing Officer, the Administrative Head, and the Political Head, each independently liable only for the duty assigned to that tier under section 3.</p>
+
+  <p class="bill-clause"><span class="marginal">Liability confined to own duty.</span><span class="cn">5.</span> (1) No officer or Political Head in the Hierarchical Task Accountability Chain of a Public Task shall be liable under this Act for a failure that is not attributable to the duty specifically assigned to that officer or Political Head under section 3.<br/>
   (2) More than one tier of the Hierarchical Task Accountability Chain may be found independently liable in respect of the same Public Task where each has failed a distinct duty assigned to it.</p>
 
-  <p class="bill-clause"><span class="marginal">Display of Task information at site and interoperability of the Register.</span><span class="cn">5.</span> (1) Information identifying the Hierarchical Task Accountability Chain of a Public Task involving physical infrastructure shall be displayed at the site of execution in such form as may be prescribed.<br/>
+  <p class="bill-clause"><span class="marginal">Display of Task information at site and interoperability of the Register.</span><span class="cn">6.</span> (1) Information identifying the Hierarchical Task Accountability Chain of a Public Task involving physical infrastructure shall be displayed at the site of execution in such form as may be prescribed.<br/>
   (2) The Register maintained under this Chapter shall, to the extent prescribed, be made interoperable with existing public procurement, works‑monitoring and grievance‑redress systems of the appropriate Government, so as to avoid duplicate reporting.</p>
 
   <hr/>
   <div class="page-no">— 4 —</div>
 
-  <h2 class="bill-chapter" id="b3">Chapter III</h2>
-  <h3 class="bill-chapter-title">Task Categories, Due Diligence and Dry Runs</h3>
+  <p class="bill-clause"><span class="marginal">Obligations of public authorities — proactive disclosure.</span><span class="cn">7.</span> (1) Every public authority responsible for a Public Task shall proactively disclose on the Portal, without requiring a citizen to ask for it,—
+    <span class="bill-sub">(a) the Hierarchical Task Accountability Chain, and the post and, where known, the name of every officer and Political Head constituting it;</span>
+    <span class="bill-sub">(b) the category and Pillar tagging of the Task under sections 10 and 11;</span>
+    <span class="bill-sub">(c) the sanctioned cost, sanctioned timeline and milestones of the Task, and the actual cost and actual timeline as they become known;</span>
+    <span class="bill-sub">(d) every due diligence certificate and dry‑run certificate issued under sections 12 and 13;</span>
+    <span class="bill-sub">(e) the procedure for filing a grievance under section 9, and the name and contact particulars of the Reviewing Officer to whom it may in the first instance be addressed;</span>
+    <span class="bill-sub">(f) every finding of an Own‑Duty Failure, and every penalty imposed or recommended, in respect of the Task; and</span>
+    <span class="bill-sub">(g) such other particulars as may be prescribed,</span>
+    and shall thereafter keep such disclosure updated at such intervals as may be prescribed.
+  <br/>(2) It shall be the constant endeavour of every public authority to publish the particulars in sub‑section (1) suo motu and to keep such publication current, so that the public have minimum need to resort to filing a grievance under section 9 to obtain such particulars.</p>
 
-  <p class="bill-clause"><span class="marginal">Classification of Public Tasks into categories.</span><span class="cn">6.</span> Every Public Task shall, at the time of registration under section 3, be classified into one of the following categories:—
+  <p class="bill-clause"><span class="marginal">Establishment and functions of the Portal.</span><span class="cn">8.</span> (1) The Central Government shall establish and maintain a public digital platform, to be known as bhagat.nic.in, for the purposes of this Act.<br/>
+  (2) The Portal shall provide, at minimum, a searchable Task Accountability Register, a dry‑run and due‑diligence certificate archive, a fatality and injury protocol tracker, a grievance‑filing facility, and a public Ministerial Accountability Record.</p>
+
+  <p class="bill-clause"><span class="marginal">Grievance filing and disposal through the Portal.</span><span class="cn">9.</span> (1) Any person may file a grievance in respect of a registered Public Task through the Portal.<br/>
+  (2) Every grievance filed under sub‑section (1) shall be disposed of by the Reviewing Officer as expeditiously as possible, and in any case within thirty days of its receipt, or within such extended period, not exceeding forty‑five days in aggregate, as the Reviewing Officer may, for reasons to be recorded in writing, require.<br/>
+  (3) Where a grievance is not disposed of within the period specified in sub‑section (2), it shall be deemed to have been referred to the Accountability Officer having jurisdiction, as if it were a second appeal under section 25.<br/>
+  (4) Every grievance and its disposal shall be tracked and published on the Portal in the manner prescribed.</p>
+
+  <hr/>
+  <div class="page-no">— 5 —</div>
+
+  <p class="bill-clause"><span class="marginal">Classification of Public Tasks into categories.</span><span class="cn">10.</span> Every Public Task shall, at the time of registration under section 3, be classified into one of the following categories:—
     <span class="bill-sub">(a) Category A — Infrastructure and Construction;</span>
     <span class="bill-sub">(b) Category B — Public Events and Mass Gatherings;</span>
     <span class="bill-sub">(c) Category C — Public Examinations;</span>
@@ -1029,43 +832,25 @@
     <span class="bill-sub">(f) Category F — Recurring Public Services.</span>
   </p>
 
-  <p class="bill-clause"><span class="marginal">Pillar tagging.</span><span class="cn">7.</span> Every Public Task shall, in addition to its category under section 6, be tagged on the Register with the Governance Pillar, the Administration Pillar, or the Transparency Pillar, or any combination thereof, that it engages, and such tagging shall be searchable by the public on the Portal.</p>
+  <p class="bill-clause"><span class="marginal">Pillar tagging.</span><span class="cn">11.</span> Every Public Task shall, in addition to its category under section 10, be tagged on the Register with the Governance Pillar, the Administration Pillar, or the Transparency Pillar, or any combination thereof, that it engages, and such tagging shall be searchable by the public on the Portal.</p>
 
-  <p class="bill-clause"><span class="marginal">Due diligence certification.</span><span class="cn">8.</span> No Public Task falling under Category A or Category D shall be marked as under execution on the Register unless the Executive Officer has certified, and the Reviewing Officer has independently verified, completion of all due diligence applicable to that Task, including, as applicable, an approved detailed project report, structural safety certificate, environmental clearance and land‑title verification.</p>
+  <p class="bill-clause"><span class="marginal">Due diligence certification.</span><span class="cn">12.</span> No Public Task falling under Category A or Category D shall be marked as under execution on the Register unless the Executive Officer has certified, and the Reviewing Officer has independently verified, completion of all due diligence applicable to that Task, including, as applicable, an approved detailed project report, structural safety certificate, environmental clearance and land‑title verification.</p>
 
-  <p class="bill-clause"><span class="marginal">Mandatory dry run before commissioning.</span><span class="cn">9.</span> (1) No Public Task falling under Category A involving new public infrastructure shall be opened for public use, no Public Task falling under Category B shall be conducted, and no Public Task falling under Category C shall be administered, unless a dry run has first been completed and certified by a Safety Certifying Officer, being a Technical Member independent of the Executive Officer.<br/>
+  <p class="bill-clause"><span class="marginal">Mandatory dry run before commissioning.</span><span class="cn">13.</span> (1) No Public Task falling under Category A involving new public infrastructure shall be opened for public use, no Public Task falling under Category B shall be conducted, and no Public Task falling under Category C shall be administered, unless a dry run has first been completed and certified by a Safety Certifying Officer, being a Technical Member independent of the Executive Officer.<br/>
   (2) A certificate issued under sub‑section (1) shall be published on the Portal, and any deficiency identified during the dry run shall be rectified and re‑verified before the Task proceeds.</p>
 
-  <p class="bill-clause"><span class="marginal">Consequence of non-compliance with sections 8 and 9.</span><span class="cn">10.</span> Commissioning, opening or conducting a Public Task referred to in section 8 or section 9 without the certification required thereunder, or the issuance of a false certificate, shall by itself constitute an Extreme‑category Own‑Duty Failure under Chapter VII, irrespective of whether any harm results therefrom.</p>
+  <p class="bill-clause"><span class="marginal">Consequence of non-compliance with sections 12 and 13.</span><span class="cn">14.</span> Commissioning, opening or conducting a Public Task referred to in section 12 or section 13 without the certification required thereunder, or the issuance of a false certificate, shall by itself constitute an Extreme‑category Own‑Duty Failure under Chapter IV, irrespective of whether any harm results therefrom.</p>
 
-  <p class="bill-clause"><span class="marginal">Protocol on death or grievous hurt.</span><span class="cn">11.</span> (1) Where a person dies or suffers grievous hurt arising from the execution or failure of a Public Task, the following shall take effect immediately, and without awaiting the outcome of any inquiry:—
+  <p class="bill-clause"><span class="marginal">Protocol on death or grievous hurt.</span><span class="cn">15.</span> (1) Where a person dies or suffers grievous hurt arising from the execution or failure of a Public Task, the following shall take effect immediately, and without awaiting the outcome of any inquiry:—
     <span class="bill-sub">(a) the event shall be treated, on a provisional basis, as an Extreme‑category matter for the purposes of this Act;</span>
     <span class="bill-sub">(b) the Executive Officer and Reviewing Officer shall stand suspended pending inquiry;</span>
     <span class="bill-sub">(c) an information report shall be registered wherever the facts disclose a cognizable offence;</span>
     <span class="bill-sub">(d) a Compensation Disbursal Officer, designated in advance for every Category A and Category B Task, shall release interim compensation to the victim or next of kin within fifteen days of the event, irrespective of the outcome of any inquiry into fault, and without prejudice to any further legal remedy.</span>
-    <br/>(2) Whether, and by which tier of the Hierarchical Task Accountability Chain, an Own‑Duty Failure was in fact committed shall be determined only by inquiry under Chapter VI; nothing in sub‑section (1) shall be treated as a finding of fault against any person.<br/>
-    (3) Where such inquiry finds that certification under section 8 or section 9 was skipped, delayed or falsely made, that finding shall by itself be sufficient for dismissal of the certifying officer.</p>
-
-  <hr/>
-  <div class="page-no">— 5 —</div>
-
-  <h2 class="bill-chapter" id="b4">Chapter IV</h2>
-  <h3 class="bill-chapter-title">Public Disclosure and the Portal</h3>
-
-  <p class="bill-clause"><span class="marginal">Proactive disclosure.</span><span class="cn">12.</span> The appropriate Government shall ensure that the status, timeline, Hierarchical Task Accountability Chain and outcome of every registered Public Task is proactively disclosed on the Portal without requiring a citizen request.</p>
-
-  <p class="bill-clause"><span class="marginal">Establishment and functions of the Portal.</span><span class="cn">13.</span> (1) The Central Government shall establish and maintain a public digital platform, to be known as bhagat.nic.in, for the purposes of this Act.<br/>
-  (2) The Portal shall provide, at minimum, a searchable Task Accountability Register, a dry‑run and due‑diligence certificate archive, a fatality and injury protocol tracker, a grievance‑filing facility, and a public Ministerial Accountability Record.</p>
-
-  <p class="bill-clause"><span class="marginal">Grievance filing through the Portal.</span><span class="cn">14.</span> Any person may file a grievance in respect of a registered Public Task through the Portal, and every such grievance shall be acknowledged and tracked to disposal in the manner prescribed.</p>
+    <br/>(2) Whether, and by which tier of the Hierarchical Task Accountability Chain, an Own‑Duty Failure was in fact committed shall be determined only by inquiry under Chapter IV; nothing in sub‑section (1) shall be treated as a finding of fault against any person.<br/>
+    (3) Where such inquiry finds that certification under section 12 or section 13 was skipped, delayed or falsely made, that finding shall by itself be sufficient for dismissal of the certifying officer.</p>
 
   <hr/>
   <div class="page-no">— 6 —</div>
-
-  <h2 class="bill-chapter" id="b5">Chapter V</h2>
-  <h3 class="bill-chapter-title">Tiers of Accountability and Budgetary Discipline</h3>
-
-  <p class="bill-clause"><span class="marginal">The four tiers of accountability.</span><span class="cn">15.</span> The Hierarchical Task Accountability Chain of every Public Task shall comprise, and no more than, the following four tiers: the Executive Officer, the Reviewing Officer, the Administrative Head, and the Political Head, each independently liable only for the duty assigned to that tier under section 3.</p>
 
   <p class="bill-clause"><span class="marginal">Recording of budget and time overruns.</span><span class="cn">16.</span> Where the actual cost or time taken for a Public Task exceeds its sanctioned cost or timeline, the Administrative Head shall record the cause of such overrun on the Register within fifteen days of it becoming known.</p>
 
@@ -1074,24 +859,31 @@
   <hr/>
   <div class="page-no">— 7 —</div>
 
-  <h2 class="bill-chapter" id="b6">Chapter VI</h2>
-  <h3 class="bill-chapter-title">Accountability Officers</h3>
+  <h2 class="bill-chapter" id="b3">Chapter III</h2>
+  <h3 class="bill-chapter-title">The Accountability Officers</h3>
 
   <p class="bill-clause"><span class="marginal">District, State and Central Accountability Officers.</span><span class="cn">18.</span> There shall be constituted, for the purposes of this Act,—
     <span class="bill-sub">(a) a District Accountability Officer for every district;</span>
     <span class="bill-sub">(b) a State Accountability Officer for every State and Union territory; and</span>
     <span class="bill-sub">(c) a Central Accountability Officer for the Union,</span>
-    each of whom shall be a single officer exercising the powers conferred by this Chapter.
+    each of whom shall be a single officer exercising the powers conferred by this Chapter and Chapter IV.
   </p>
 
-  <p class="bill-clause"><span class="marginal">Qualifications, rank and independence.</span><span class="cn">19.</span> (1) The District Accountability Officer shall be an officer not below the rank of a District Judge, and shall be liable to removal only in the manner, and before the authority, applicable to a District Judge.<br/>
+  <p class="bill-clause"><span class="marginal">Qualifications, rank, independence and oath of office.</span><span class="cn">19.</span> (1) The District Accountability Officer shall be an officer not below the rank of a District Judge, and shall be liable to removal only in the manner, and before the authority, applicable to a District Judge.<br/>
   (2) The State Accountability Officer shall be a sitting or retired Judge of a High Court, and shall be liable to removal only in the manner applicable to a Judge of a High Court.<br/>
   (3) The Central Accountability Officer shall be a sitting or retired Judge of the Supreme Court, or a former Chief Justice of a High Court, and shall be liable to removal only in the manner applicable to a Judge of the Supreme Court.<br/>
-  (4) No Accountability Officer shall, during the tenure of that office, be subordinate to the Administrative Head or Political Head of any Public Task under inquiry before that Officer.</p>
+  (4) No Accountability Officer shall, during the tenure of that office, be subordinate to the Administrative Head or Political Head of any Public Task under inquiry before that Officer.<br/>
+  (5) Every Accountability Officer shall, before entering upon office under this Chapter, make and subscribe, before such authority as may be prescribed, an oath or affirmation in the form set out in the First Schedule.</p>
 
-  <p class="bill-clause"><span class="marginal">Technical Members.</span><span class="cn">20.</span> An Accountability Officer may, for the purposes of an inquiry under this Chapter, associate with such Technical Members possessing domain expertise relevant to the Public Task under inquiry as may be prescribed.</p>
+  <p class="bill-clause"><span class="marginal">Technical Members.</span><span class="cn">20.</span> An Accountability Officer may, for the purposes of an inquiry under Chapter IV, associate with such Technical Members possessing domain expertise relevant to the Public Task under inquiry as may be prescribed.</p>
 
-  <p class="bill-clause"><span class="marginal">Jurisdiction and reference of corruption matters.</span><span class="cn">21.</span> (1) A District Accountability Officer shall have jurisdiction over Public Tasks executed within that district, a State Accountability Officer over Public Tasks of that State, and a Central Accountability Officer over Public Tasks of the Union and over appeals referred to it under Chapter VII.<br/>
+  <hr/>
+  <div class="page-no">— 8 —</div>
+
+  <h2 class="bill-chapter" id="b4">Chapter IV</h2>
+  <h3 class="bill-chapter-title">Powers and Functions of the Accountability Officers, Appeal and Penalties</h3>
+
+  <p class="bill-clause"><span class="marginal">Jurisdiction, powers of inquiry, and reference of corruption matters.</span><span class="cn">21.</span> (1) A District Accountability Officer shall have jurisdiction over Public Tasks executed within that district, a State Accountability Officer over Public Tasks of that State, and a Central Accountability Officer over Public Tasks of the Union and over appeals referred to it under this Chapter.<br/>
   (2) For the purposes of an inquiry under this Chapter, an Accountability Officer shall have the powers of a civil court under the Code of Civil Procedure, 1908, in respect of summoning and enforcing the attendance of witnesses and the discovery and production of documents, but shall not otherwise exercise any power of search or seizure.<br/>
   (3) Where an inquiry under this Chapter discloses facts constituting an offence under any law relating to corruption by public servants, the Accountability Officer shall refer the matter to the authority competent to investigate that offence under such law, without prejudice to the continuation of the inquiry under this Act.</p>
 
@@ -1099,58 +891,117 @@
 
   <p class="bill-clause"><span class="marginal">Duty of Government on receipt of a recommendation.</span><span class="cn">23.</span> The competent Government authority receiving a recommendation under section 22 shall, within thirty days, either act upon it or publish on the Portal its reasons for not acting upon it in the manner recommended; nothing in this section shall be construed as conferring upon an Accountability Officer the power to itself dismiss, remove or otherwise punish any officer or Political Head.</p>
 
-  <hr/>
-  <div class="page-no">— 8 —</div>
+  <p class="bill-clause"><span class="marginal">Departmental appeal.</span><span class="cn">24.</span> (1) A person aggrieved by a finding recorded against an officer under this Act, or by the disposal of a grievance under section 9, may, within thirty days of such finding or disposal, prefer an appeal to the departmental authority senior in rank to the Reviewing Officer concerned:<br/>
+  Provided that such authority may admit the appeal after the expiry of the said period if satisfied that the appellant was prevented by sufficient cause from filing it in time.<br/>
+  (2) An appeal under sub‑section (1) shall be disposed of within thirty days of its receipt, or within such extended period, not exceeding forty‑five days in aggregate, as may, for reasons to be recorded in writing, be required.</p>
 
-  <h2 class="bill-chapter" id="b7">Chapter VII</h2>
-  <h3 class="bill-chapter-title">Appeals and Punishments</h3>
-
-  <p class="bill-clause"><span class="marginal">Departmental appeal.</span><span class="cn">24.</span> A person aggrieved by a finding recorded against an officer under this Act may, in the first instance, prefer an appeal to the departmental authority superior to the Reviewing Officer, within such time as may be prescribed.</p>
-
-  <p class="bill-clause"><span class="marginal">Second appeal to the Accountability Officer.</span><span class="cn">25.</span> A person aggrieved by an order passed in appeal under section 24 may prefer a second appeal to the District, State or Central Accountability Officer having jurisdiction, whose recommendation thereon shall be dealt with in the manner provided in section 23.</p>
-
-  <p class="bill-clause"><span class="marginal">Graded schedule of punishments.</span><span class="cn">26.</span> The competent Government authority, on a recommendation under section 22 or section 25, may impose, according to the gravity of the Own‑Duty Failure and consistent with applicable service rules, penalties ranging from a recorded warning, withholding of increment, and adverse entry, to transfer, reduction in rank, compulsory retirement, and dismissal from service.</p>
-
-  <p class="bill-clause"><span class="marginal">Statement of Task Failure before the House.</span><span class="cn">27.</span> Where an Extreme‑category Own‑Duty Failure is recorded in respect of a Public Task, the Political Head shall table a Statement of Task Failure before the House, and cause it to be published on the Portal, within fifteen sitting days of the finding.</p>
+  <p class="bill-clause"><span class="marginal">Second appeal to the Accountability Officer.</span><span class="cn">25.</span> (1) A person aggrieved by an order passed in appeal under section 24, or by the expiry of the period specified therein without an order being passed, may, within ninety days of such order or expiry, prefer a second appeal to the District, State or Central Accountability Officer having jurisdiction.<br/>
+  (2) The Accountability Officer shall dispose of a second appeal under this section, and record a recommendation under section 22, within one hundred and eighty days of its receipt.<br/>
+  (3) The onus of proving that a finding or action under appeal was justified shall lie on the officer whose finding or action is under appeal.</p>
 
   <hr/>
   <div class="page-no">— 9 —</div>
 
-  <h2 class="bill-chapter" id="b8">Chapter VIII</h2>
-  <h3 class="bill-chapter-title">Removal of a Political Head from Office</h3>
+  <p class="bill-clause"><span class="marginal">Graded schedule of punishments.</span><span class="cn">26.</span> The competent Government authority, on a recommendation under section 22 or section 25, may impose, according to the gravity of the Own‑Duty Failure and consistent with applicable service rules, penalties ranging from a recorded warning, withholding of increment, and adverse entry, to transfer, reduction in rank, compulsory retirement, and dismissal from service.</p>
 
-  <p class="bill-clause"><span class="marginal">Ministerial Accountability Record.</span><span class="cn">28.</span> The Portal shall maintain, in respect of every Political Head, a public and cumulative Ministerial Accountability Record of every Extreme‑category Own‑Duty Failure, Budget Overrun Justification and Statement of Task Failure attributed to that Political Head under this Act.</p>
+  <p class="bill-clause"><span class="marginal">Daily penalty for delay or default.</span><span class="cn">27.</span> (1) Where the Accountability Officer, while disposing of a second appeal under section 25, is of the opinion that the Executive Officer or the Reviewing Officer concerned has, without reasonable cause, failed to register a Public Task within the time specified in section 3, failed to dispose of a grievance within the time specified in section 9, or knowingly caused incorrect, incomplete or misleading particulars to be entered on the Register, the Accountability Officer shall, as part of the recommendation under section 22, recommend imposition of a penalty of two hundred and fifty rupees for every day of such default, so however that the total penalty recommended in respect of one default shall not exceed twenty‑five thousand rupees.<br/>
+  (2) No penalty shall be recommended under sub‑section (1) without giving the officer concerned a reasonable opportunity of being heard, and the burden of proving that the officer acted reasonably and diligently shall lie on that officer.<br/>
+  (3) Where a default referred to in sub‑section (1) is found to be persistent, the Accountability Officer shall, in addition to the penalty under sub‑section (1), recommend that disciplinary action be taken against the officer under the service rules applicable to him.</p>
 
-  <p class="bill-clause"><span class="marginal">Mandatory review hearing.</span><span class="cn">29.</span> On the third entry, or an earlier entry involving loss of life, recorded against a Political Head in the Ministerial Accountability Record, the State or Central Accountability Officer, as the case may be, shall hold a public review hearing and record its findings thereon.</p>
-
-  <p class="bill-clause"><span class="marginal">Transmission to the House and the Head of Government; saving of constitutional procedure.</span><span class="cn">30.</span> (1) The findings of a review hearing under section 29 shall be transmitted to the Speaker of the House concerned and to the Prime Minister or, as the case may be, the Chief Minister.<br/>
-  (2) Nothing in this Chapter shall be construed as affecting the operation of article 75 or article 164 of the Constitution, and the continuance in office of a Political Head shall remain a matter for the President or the Governor, as the case may be, acting in accordance with the Constitution.</p>
+  <p class="bill-clause"><span class="marginal">Statement of Task Failure before the House.</span><span class="cn">28.</span> Where an Extreme‑category Own‑Duty Failure is recorded in respect of a Public Task, the Political Head shall table a Statement of Task Failure before the House, and cause it to be published on the Portal, within fifteen sitting days of the finding.</p>
 
   <hr/>
   <div class="page-no">— 10 —</div>
 
-  <h2 class="bill-chapter" id="b9">Chapter IX</h2>
-  <h3 class="bill-chapter-title">Miscellaneous</h3>
+  <h2 class="bill-chapter" id="b5">Chapter V</h2>
+  <h3 class="bill-chapter-title">Removal of a Political Head from Office</h3>
 
-  <p class="bill-clause"><span class="marginal">Protection of persons acting in good faith.</span><span class="cn">31.</span> No suit, prosecution or other legal proceeding shall lie against any person for anything done or intended to be done in good faith under this Act, including the filing of a grievance or complaint disclosed to be made in good faith, and such person shall be entitled to such protection against victimisation as may be prescribed.</p>
+  <p class="bill-clause"><span class="marginal">Ministerial Accountability Record.</span><span class="cn">29.</span> The Portal shall maintain, in respect of every Political Head, a public and cumulative Ministerial Accountability Record of every Extreme‑category Own‑Duty Failure, Budget Overrun Justification and Statement of Task Failure attributed to that Political Head under this Act.</p>
 
-  <p class="bill-clause"><span class="marginal">Penalty for false or frivolous complaints.</span><span class="cn">32.</span> Whoever files a complaint under this Act knowing it to be false or frivolous shall be liable to such penalty as may be prescribed.</p>
+  <p class="bill-clause"><span class="marginal">Mandatory review hearing.</span><span class="cn">30.</span> On the third entry, or an earlier entry involving loss of life, recorded against a Political Head in the Ministerial Accountability Record, the State or Central Accountability Officer, as the case may be, shall hold a public review hearing and record its findings thereon.</p>
 
-  <p class="bill-clause"><span class="marginal">Relationship with other laws.</span><span class="cn">33.</span> The provisions of this Act shall be in addition to, and not in derogation of, any other law for the time being in force relating to corruption by public servants, disclosure of information by public authorities, or the conduct and discipline of public servants.</p>
-
-  <p class="bill-clause"><span class="marginal">Ministerial responsibility to the House not affected.</span><span class="cn">34.</span> Nothing in this Act shall derogate from the collective responsibility of the Council of Ministers to the House under article 75(3) or article 164(2) of the Constitution.</p>
-
-  <p class="bill-clause"><span class="marginal">Independence of the Election Commission preserved.</span><span class="cn">35.</span> Nothing in this Act shall apply so as to attach a Political Head to a Public Task relating to the conduct of elections, which shall remain subject to the exclusive superintendence, direction and control of the Election Commission under article 324 of the Constitution.</p>
-
-  <p class="bill-clause"><span class="marginal">Power to make rules.</span><span class="cn">36.</span> (1) The appropriate Government may, by notification, make rules for carrying out the provisions of this Act.<br/>
-  (2) Every rule made under this Act by the Central Government shall be laid, as soon as may be after it is made, before each House of Parliament, while it is in session, for a total period of thirty days, and shall be subject to such modification or annulment as both Houses may agree upon.</p>
-
-  <p class="bill-clause"><span class="marginal">Power to remove difficulties.</span><span class="cn">37.</span> If any difficulty arises in giving effect to the provisions of this Act, the Central Government may, by order published in the Official Gazette, make such provisions, not inconsistent with the provisions of this Act, as appear to it to be necessary or expedient for removing the difficulty: Provided that no such order shall be made after the expiry of a period of two years from the date of commencement of this Act.</p>
+  <p class="bill-clause"><span class="marginal">Transmission to the House and the Head of Government; saving of constitutional procedure.</span><span class="cn">31.</span> (1) The findings of a review hearing under section 30 shall be transmitted to the Speaker of the House concerned and to the Prime Minister or, as the case may be, the Chief Minister.<br/>
+  (2) Nothing in this Chapter shall be construed as affecting the operation of article 75 or article 164 of the Constitution, and the continuance in office of a Political Head shall remain a matter for the President or the Governor, as the case may be, acting in accordance with the Constitution.</p>
 
   <hr/>
   <div class="page-no">— 11 —</div>
 
-  <div class="schedule-title" id="bsched">The Schedule</div>
+  <h2 class="bill-chapter" id="b6">Chapter VI</h2>
+  <h3 class="bill-chapter-title">Miscellaneous</h3>
+
+  <p class="bill-clause"><span class="marginal">Protection of persons acting in good faith.</span><span class="cn">32.</span> No suit, prosecution or other legal proceeding shall lie against any person for anything done or intended to be done in good faith under this Act, including the filing of a grievance or complaint disclosed to be made in good faith, and such person shall be entitled to such protection against victimisation as may be prescribed.</p>
+
+  <p class="bill-clause"><span class="marginal">Penalty for false or frivolous complaints.</span><span class="cn">33.</span> Whoever files a complaint under this Act knowing it to be false or frivolous shall be liable to such penalty as may be prescribed.</p>
+
+  <p class="bill-clause"><span class="marginal">Act to have overriding effect.</span><span class="cn">34.</span> The provisions of this Act relating to the registration and public disclosure of a Public Task shall have effect notwithstanding anything inconsistent therewith contained in any departmental manual, service regulation, standing order or instruction for the time being in force.</p>
+
+  <p class="bill-clause"><span class="marginal">Relationship with other laws.</span><span class="cn">35.</span> The provisions of this Act shall be in addition to, and not in derogation of, any other law for the time being in force relating to corruption by public servants, disclosure of information by public authorities, or the conduct and discipline of public servants.</p>
+
+  <p class="bill-clause"><span class="marginal">Ministerial responsibility to the House not affected.</span><span class="cn">36.</span> Nothing in this Act shall derogate from the collective responsibility of the Council of Ministers to the House under article 75(3) or article 164(2) of the Constitution.</p>
+
+  <p class="bill-clause"><span class="marginal">Independence of the Election Commission preserved.</span><span class="cn">37.</span> Nothing in this Act shall apply so as to attach a Political Head to a Public Task relating to the conduct of elections, which shall remain subject to the exclusive superintendence, direction and control of the Election Commission under article 324 of the Constitution.</p>
+
+  <hr/>
+  <div class="page-no">— 12 —</div>
+
+  <p class="bill-clause"><span class="marginal">Act not to require public disclosure in relation to certain organisations.</span><span class="cn">38.</span> (1) Nothing in this Act shall require public disclosure on the Portal of particulars of a Public Task of an intelligence or security organisation specified in the Second Schedule, being an organisation established by the Central Government, or of any information furnished by such organisation to that Government:<br/>
+  Provided that a Public Task of such organisation shall nonetheless be registered, and an internal Hierarchical Task Accountability Chain maintained, in the manner prescribed, for the purposes of inquiry under Chapter IV:<br/>
+  Provided further that this sub‑section shall not exclude from public disclosure any Own‑Duty Failure involving an allegation of corruption or of violation of human rights, which shall be inquired into and disclosed in the manner prescribed after such security review as may be necessary.<br/>
+  (2) The Central Government may, by notification in the Official Gazette, amend the Second Schedule so as to include or omit an organisation, and every such notification shall be laid before each House of Parliament.<br/>
+  (3) A State Government may, by notification in the Official Gazette, specify intelligence or security organisations established by that Government to which sub‑section (1) shall apply, subject to the provisos thereto, and every such notification shall be laid before the State Legislature.</p>
+
+  <p class="bill-clause"><span class="marginal">Monitoring and annual reporting.</span><span class="cn">39.</span> (1) Every Accountability Officer shall, as soon as practicable after the end of each financial year, prepare a report on the working of this Act within that Officer's jurisdiction during that year, and forward a copy to the appropriate Government and to the Portal for publication.<br/>
+  (2) Every report under sub‑section (1) shall state, in respect of the year to which it relates,—
+    <span class="bill-sub">(a) the number of Public Tasks registered, category‑wise;</span>
+    <span class="bill-sub">(b) the number of grievances and appeals received and disposed of, and the average time taken;</span>
+    <span class="bill-sub">(c) the number of Own‑Duty Failures found, tier‑wise, and the penalties imposed or recommended in respect thereof;</span>
+    <span class="bill-sub">(d) the number of Statements of Task Failure tabled under section 28 and of Ministerial Accountability Record entries made under section 29; and</span>
+    <span class="bill-sub">(e) recommendations, if any, for the reform of this Act or of the rules made thereunder.</span>
+  <br/>(3) The appropriate Government shall cause a copy of every report received under this section to be laid before the House or the State Legislature, as the case may be.</p>
+
+  <p class="bill-clause"><span class="marginal">Power to make rules by appropriate Government.</span><span class="cn">40.</span> (1) The appropriate Government may, by notification in the Official Gazette, make rules to carry out the provisions of this Act.<br/>
+  (2) In particular, and without prejudice to the generality of the foregoing power, such rules may provide for all or any of the following matters, namely:—
+    <span class="bill-sub">(a) the threshold of public impact above which a Public Task must be registered under section 3;</span>
+    <span class="bill-sub">(b) the form of display of Task information under section 6;</span>
+    <span class="bill-sub">(c) the particulars to be published under section 7, and the manner and intervals of such publication;</span>
+    <span class="bill-sub">(d) the fee, if any, and procedure for grievance filing under section 9;</span>
+    <span class="bill-sub">(e) the salaries, allowances and conditions of service of Accountability Officers and Technical Members under sections 19 and 20;</span>
+    <span class="bill-sub">(f) the manner of recovery of a penalty recommended under section 27;</span>
+    <span class="bill-sub">(g) the manner of internal registration of Tasks under section 38; and</span>
+    <span class="bill-sub">(h) any other matter which is required to be, or may be, prescribed.</span>
+  </p>
+
+  <p class="bill-clause"><span class="marginal">Power to make rules by constitutional authority.</span><span class="cn">41.</span> (1) The Speaker of the House of the People or of the Legislative Assembly of a State, the Chairman of the Council of States or of a Legislative Council, the Chief Justice of India, the Chief Justice of a High Court, the President, the Governor, or the administrator appointed under article 239 of the Constitution, as the case may be, may, in relation to a Public Task of a body under that authority's administrative control, make rules to carry out the provisions of this Act consistently with the autonomy of that body.<br/>
+  (2) In particular, such rules may provide for the manner of registration, the officers constituting the Hierarchical Task Accountability Chain, and the grievance procedure applicable to such a body.</p>
+
+  <hr/>
+  <div class="page-no">— 13 —</div>
+
+  <p class="bill-clause"><span class="marginal">Laying of rules.</span><span class="cn">42.</span> (1) Every rule made under section 40 by the Central Government shall be laid, as soon as may be after it is made, before each House of Parliament, while it is in session, for a total period of thirty days which may be comprised in one session or in two or more successive sessions, and if, before the expiry of the session immediately following the session or the successive sessions aforesaid, both Houses agree in making any modification in the rule, or both Houses agree that the rule should not be made, the rule shall thereafter have effect only in such modified form or be of no effect, as the case may be, without prejudice to the validity of anything previously done under that rule.<br/>
+  (2) Every rule made under section 40 by a State Government, and every rule made under section 41, shall be laid, as soon as may be after it is made, before the House or Houses of the State Legislature concerned, or, as the case may be, before the body to which the constitutional authority making it is answerable.</p>
+
+  <p class="bill-clause"><span class="marginal">Power to remove difficulties.</span><span class="cn">43.</span> If any difficulty arises in giving effect to the provisions of this Act, the Central Government may, by order published in the Official Gazette, make such provisions, not inconsistent with the provisions of this Act, as appear to it to be necessary or expedient for removing the difficulty: Provided that no such order shall be made after the expiry of a period of two years from the date of commencement of this Act.</p>
+
+  <hr/>
+  <div class="page-no">— 14 —</div>
+
+  <div class="schedule-title" id="bsched1">The First Schedule</div>
+  <p style="text-align:center; margin-top:-8px; margin-bottom:16px; font-size:13px;">[See section 19(5)]<br/><em>Form of oath or affirmation to be made by the District Accountability Officer / State Accountability Officer / Central Accountability Officer</em></p>
+  <p class="memo-p" style="text-align:center; font-style:italic;">"I, ____________________, having been appointed District/State/Central Accountability Officer, do swear in the name of God/solemnly affirm that I will bear true faith and allegiance to the Constitution of India, that I will uphold its sovereignty and integrity, and that I will duly and faithfully, and to the best of my ability, knowledge and judgment, perform the duties of my office without fear or favour, affection or ill‑will, and that I will uphold the Register and the Portal established under this Act."</p>
+
+  <div class="schedule-title" id="bsched2">The Second Schedule</div>
+  <p style="text-align:center; margin-top:-8px; margin-bottom:16px; font-size:13px;">[See section 38]<br/><em>Organisations to which section 38 applies</em></p>
+  <p class="memo-p">1. Intelligence Bureau.<br/>
+  2. Research and Analysis Wing of the Cabinet Secretariat.<br/>
+  3. Directorate of Revenue Intelligence.<br/>
+  4. Central Economic Intelligence Bureau.<br/>
+  5. Directorate of Enforcement.<br/>
+  6. National Investigation Agency.<br/>
+  7. National Technical Research Organisation.<br/>
+  8. Special Protection Group.</p>
+  <p class="memo-p" style="font-size:12.5px; color:#6B6558;">Note.— The Central Government may, by notification under sub‑section (2) of section 38, amend this Schedule.</p>
+
+  <div class="schedule-title" id="bsched">The Third Schedule</div>
   <p style="text-align:center; margin-top:-8px; margin-bottom:16px; font-size:13px;">[See section 3]<br/><em>Illustrative Hierarchical Task Accountability Chain map</em></p>
   <table>
     <tr><th>Public Task</th><th>EO</th><th>RO</th><th>AH</th><th>PH</th></tr>
@@ -1164,17 +1015,17 @@
   <div class="memo-title">Statement of Objects and Reasons</div>
   <p class="memo-p">Under article 75(3) of the Constitution, the Council of Ministers is collectively responsible to the House of the People, and under article 164(2), State Councils of Ministers are similarly responsible to their Legislative Assemblies. This model of collective, general responsibility, while constitutionally sound, does not by itself fix, in advance and in public, which specific officer or Minister is responsible for the execution of a given public task.</p>
   <p class="memo-p">2. Experience shows that the most common failure in the execution of public tasks is not the absence of any responsible person, but the informal diffusion of responsibility across several levels of the administration, with no single record establishing who was to do what, by when, and with what consequence for failure.</p>
-  <p class="memo-p">3. This Bill accordingly seeks to establish a four‑tier Hierarchical Task Accountability Chain — an Executive Officer, a Reviewing Officer, an Administrative Head and a Political Head — for every public task of defined public consequence, to be recorded on a public digital register, together with mandatory due diligence and dry‑run requirements for high‑risk categories of task, a fatality and injury protocol, single Accountability Officers at the district, State and central level empowered to recommend action, a two‑stage appeal process, and a graded schedule of penalties.</p>
+  <p class="memo-p">3. This Bill accordingly seeks to establish a four‑tier Hierarchical Task Accountability Chain — an Executive Officer, a Reviewing Officer, an Administrative Head and a Political Head — for every public task of defined public consequence, to be recorded on a public digital register, together with day‑bound proactive disclosure obligations on every public authority, mandatory due diligence and dry‑run requirements for high‑risk categories of task, a fatality and injury protocol, single Accountability Officers at the district, State and central level empowered to recommend action, a two‑stage appeal process with fixed timelines for disposal, a graded schedule of penalties, and a daily monetary penalty for unreasonable delay or default, on the well‑tested pattern already used elsewhere in Indian law for citizen‑facing disclosure and appeal mechanisms, here adapted to the accountability of tasks rather than the disclosure of information.</p>
   <p class="memo-p">4. The Bill does not, and constitutionally cannot, confer upon any authority created by it the power to itself remove a Minister from office; it instead creates a public, cumulative Ministerial Accountability Record and a mandatory review hearing, so that the political consequence of repeated or grave task failures is a matter of public record placed before the House, the Prime Minister or Chief Minister, and the electorate.</p>
   <p class="memo-p">5. The Bill seeks to achieve the above objects.</p>
   <div class="signoff">— Mover</div>
 
   <div class="memo-title">Financial Memorandum</div>
-  <p class="memo-p">Clause 13 of the Bill provides for the establishment and maintenance of a public digital platform (the Portal). Clause 18 provides for the appointment of District, State and Central Accountability Officers, and clause 20 for the association of Technical Members with them. The Bill, if enacted, would involve expenditure from the Consolidated Fund of India and the Consolidated Fund of the States concerned, towards the establishment and maintenance of the Portal, and the salaries, allowances and office expenses of the Accountability Officers and Technical Members and their supporting staff.</p>
-  <p class="memo-p">2. It is estimated that the Bill would involve a non‑recurring expenditure of approximately ₹250 crore towards the development of the Portal and the initial establishment of the offices of Accountability Officers, and a recurring expenditure of approximately ₹180 crore per annum thereafter. No other recurring or non‑recurring expenditure is anticipated.</p>
+  <p class="memo-p">Clause 8 of the Bill provides for the establishment and maintenance of a public digital platform (the Portal). Clause 18 provides for the appointment of District, State and Central Accountability Officers, and clause 20 for the association of Technical Members with them. The Bill, if enacted, would involve expenditure from the Consolidated Fund of India and the Consolidated Fund of the States concerned, towards the establishment and maintenance of the Portal, and the salaries, allowances and office expenses of the Accountability Officers and Technical Members and their supporting staff.</p>
+  <p class="memo-p">2. It is estimated that the Bill would involve a non‑recurring expenditure of approximately ₹250 crore towards the development of the Portal and the initial establishment of the offices of Accountability Officers, and a recurring expenditure of approximately ₹180 crore per annum thereafter. Penalties recovered under clause 27 shall be credited to the Consolidated Fund of India or of the State concerned, as the case may be, and are not expected to be material. No other recurring or non‑recurring expenditure is anticipated.</p>
 
   <div class="memo-title">Memorandum Regarding Delegated Legislation</div>
-  <p class="memo-p">Sub‑section (1) of section 36 of the Bill empowers the appropriate Government to make rules for carrying out the provisions of the Act, including, among other matters, the threshold of public impact above which a Public Task must be registered under section 3, the form of display of Task information under section 5, the qualifications and terms of office of Accountability Officers and Technical Members under sections 19 and 20, and the procedure for grievance filing under section 14.</p>
+  <p class="memo-p">Sub‑section (1) of section 40 of the Bill empowers the appropriate Government to make rules for carrying out the provisions of the Act, including, among other matters, the threshold of public impact above which a Public Task must be registered under section 3, the form of display of Task information under section 6, the particulars to be proactively published under section 7, the procedure for grievance filing under section 9, the qualifications and terms of office of Accountability Officers and Technical Members under sections 19 and 20, the manner of recovery of the daily penalty under section 27, and the manner of internal registration of Tasks of excluded organisations under section 38. Section 41 makes corresponding provision for rules to be made, in relation to bodies under their own administrative control, by the Speaker, the Chairman, the Chief Justice of India, the Chief Justice of a High Court, the President, the Governor, or the administrator appointed under article 239 of the Constitution, as the case may be.</p>
   <p class="memo-p">2. The matters in respect of which rules may be made are matters of procedure and detail, and the delegation of legislative power is of a normal character.</p>
 
   <div class="place-date">New Delhi;<br/>[Date], 2026</div>
