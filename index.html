@@ -177,6 +177,30 @@
   }
   .tribute .mark{ font-size:22px; }
 
+  .tribute-photos{ display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-bottom:20px; }
+  .tribute-photos figure{ margin:0; text-align:center; }
+  .tribute-photos img{
+    width:104px; height:134px; object-fit:cover; display:block; margin:0 auto 8px;
+    border-radius:8px; border:3px solid var(--saffron);
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  }
+  .tribute-photos figcaption{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:12px; font-weight:700; color:rgba(255,255,255,0.92); line-height:1.4;
+  }
+  .tribute-photos figcaption span{ display:block; font-size:10.5px; font-weight:400; opacity:.65; margin-top:1px; }
+
+  .jai-hind{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    margin:18px 0 4px; font-size:22px; font-weight:700; color:var(--saffron); letter-spacing:.02em;
+  }
+  .jai-hind .translit{
+    font-size:12.5px; font-weight:400; color:rgba(255,255,255,0.75);
+    margin-top:5px; letter-spacing:.14em; text-transform:uppercase;
+  }
+
+  .top-disclaimer{ max-width:760px; margin:26px auto 0; padding:0 22px; }
+
   section{ margin-bottom:46px; }
 
   h2.chapter{
@@ -349,7 +373,7 @@
   }
   .part-label h2{ margin:0; font-size:22px; color:var(--navy); }
   .part-label p{ margin:8px auto 0; max-width:640px; font-size:13.5px; color:var(--muted); }
-  #summary > .part-label, #bill > .part-label{ background:var(--bg); }
+  #bill > .part-label{ background:var(--bg); }
 
   .submit-cta{
     text-align:center; background:linear-gradient(150deg,var(--navy) 0%, var(--navy-2) 100%);
@@ -412,9 +436,6 @@
   .bill-clause::after{ content:""; display:block; clear:both; }
   .bill-paper .page-no{ text-align:center; font-size:11px; color:#7a7460; margin:26px 0 -8px; letter-spacing:.1em; }
   @media print{ h2.bill-chapter{ page-break-before:always; } }
-
-  /* ===== Summary — one-page explainer ===== */
-  #summary main{ background:transparent; }
 
   .slide{
     background:var(--card); border:1px solid var(--border); border-radius:16px;
@@ -484,196 +505,30 @@
 <div class="draft-ribbon">Draft concept note for public discussion — not an enacted law — not an official Government of India document</div>
 
 <nav class="part-switcher">
-  <a href="#summary">Summary</a>
   <a href="#bill">The Bill</a>
   <a href="#submit" class="submit-nav-btn">Submit Your Submission</a>
 </nav>
 
-<section id="summary">
-<header class="cover">
-  <div class="emblem">⚖️ 🇮🇳</div>
+<header class="cover" id="top">
+  <div class="tribute-photos">
+    <figure>
+      <img src="assets/bhagat-singh.jpg" alt="Shaheed Bhagat Singh, 1907–1931" />
+      <figcaption>Shaheed Bhagat Singh<span>1907 – 1931</span></figcaption>
+    </figure>
+    <figure>
+      <img src="assets/chandra-shekhar-azad.jpg" alt="Chandra Shekhar Azad, 1906–1931" />
+      <figcaption>Chandra Shekhar Azad<span>1906 – 1931</span></figcaption>
+    </figure>
+  </div>
   <div class="kicker">Citizen Draft &middot; Legislative Concept Note &middot; 2026</div>
   <h1>The BHAGAT Bill, 2026</h1>
-  <p class="subtitle">Basic Hierarchical Accountability for Governance, Administration &amp; Transparency — replacing single‑officer blame with a fully documented chain of responsibility, from the field officer who executes a task up to the Minister who answers for it in Parliament and to the public.</p>
-  <div class="acronym-grid">
-    <div class="letter"><div class="ch">B</div><div class="word">Basic</div></div>
-    <div class="letter"><div class="ch">H</div><div class="word">Hierarchical</div></div>
-    <div class="letter"><div class="ch">A</div><div class="word">Accountability</div></div>
-    <div class="letter"><div class="ch">G</div><div class="word">Governance,</div></div>
-    <div class="letter"><div class="ch">A</div><div class="word">Administration &amp;</div></div>
-    <div class="letter"><div class="ch">T</div><div class="word">Transparency</div></div>
-  </div>
-  <div class="meta">
-    <span>Anchor: <strong>Article 75(3) / Article 164(2), Constitution of India</strong></span>
-    <span>Portal: <strong>bhagat.nic.in</strong></span>
-    <span>Appeal: <strong>Two‑stage — Departmental, then District/State/Central Accountability Officer</strong></span>
-    <span>Status: <strong>Discussion Draft</strong></span>
-  </div>
+  <p class="subtitle">Basic Hierarchical Accountability for Governance, Administration &amp; Transparency — a documented chain of responsibility for every public task, from the field officer who executes it to the Minister who answers for it.</p>
+  <div class="jai-hind">जय हिन्द 🇮🇳 वंदे मातरम्<div class="translit">Jai Hind! &middot; Vande Mataram!</div></div>
 </header>
 
-<div class="part-label">
-  <div class="num">In Brief</div>
-  <h2>The Easy Way to Understand It</h2>
-  <p>One page, plain language: why this is needed, how the chain of responsibility works, how a task gets created and tracked, what the safety rules and punishments look like, and how a Minister actually loses office. The formal legal text, clause by clause, is in <a href="#bill">The Bill</a> below.</p>
+<div class="disclaimer top-disclaimer">
+  <strong>Disclaimer.</strong> This is a very basic, citizen‑drafted concept note — not an official Bill, and not vetted by any legal or legislative authority. It almost certainly contains mistakes, gaps or errors in law, procedure or drafting. It is shared only to invite comment and correction — please read <a href="#bill">the Bill</a> below and use the submission link at the end to tell us what to fix.
 </div>
-
-<main>
-
-  <div class="disclaimer">
-    <strong>Note on this document.</strong> This is a citizen‑drafted concept note prepared for public debate and advocacy, in the style of a legislative Bill. It is <strong>not</strong> an official Bill introduced in Parliament, has not been vetted by the Ministry of Law &amp; Justice or Legislative Department, and would require formal Cabinet approval, pre‑legislative consultation, and drafting by the Legislative Counsel before it could be tabled.
-  </div>
-
-  <div class="tribute">
-    <span class="mark">🩸</span>
-    <span>Named in memory of <strong>Shaheed Bhagat Singh</strong> (1907–1931), who held the colonial system to account when it hid behind procedure and anonymity. This Bill borrows his refusal to let power dissolve into "the system" — every duty here is fixed to a name, a post, and a deadline.</span>
-  </div>
-
-  <section id="why">
-    <div class="slide">
-      <h2 class="title">Why BHAGAT?</h2>
-      <div class="lede">🗣️ Right now, when something goes wrong, everyone can blame everyone else — and often no one is punished. BHAGAT writes down, <b>in advance and in public</b>, exactly which 4 people are responsible for every task.</div>
-      <div class="slide-grid">
-        <ul class="bullets">
-          <li>Ministers answer to Parliament <b>as a whole</b> (Art. 75(3)/164(2)) — not built for tracing one failed task.</li>
-          <li>India's existing graft watchdog and information‑request law are both <b>reactive</b> — a citizen must ask first.</li>
-          <li>BHAGAT fixes <b>4 named roles</b> to every task, before it even starts.</li>
-          <li>Every task is tagged <b>Governance</b>, <b>Administration</b>, or <b>Transparency</b> — so you can ask the right question.</li>
-        </ul>
-        <div class="compare" style="margin:0;">
-          <div class="card old" style="margin:0;">
-            <h4>Old model</h4>
-            <p style="font-size:13px;">One diffuse "department." Everyone points at everyone else. Punishment, if any, lands on the most junior name — or no one.</p>
-          </div>
-          <div class="card new" style="margin:0;">
-            <h4>BHAGAT model</h4>
-            <p style="font-size:13px;">4 named roles per task, each with a public record on bhagat.nic.in. Failure is traced to the exact duty that wasn't performed.</p>
-          </div>
-        </div>
-      </div>
-      <div class="slide-ref">Legal text: <a href="#b1">The Bill, Statement of Objects &amp; Reasons</a></div>
-    </div>
-  </section>
-
-  <section id="chain">
-    <div class="slide">
-      <h2 class="title">The Chain of 4 — Who Answers for What</h2>
-      <div class="lede">🗣️ Four names stapled to every task. Each is judged <b>only on their own job</b> — the field officer isn't blamed for a policy decision, and the Minister can't hide behind a junior officer's mistake.</div>
-      <div class="chain" style="margin:0 0 16px;">
-        <div class="step eo"><div class="role">Tier IV</div><div class="who">Executive Officer</div><div class="duty">Does the work. First in line.</div></div>
-        <div class="chain-arrow">→</div>
-        <div class="step ro"><div class="role">Tier III</div><div class="who">Reviewing Officer</div><div class="duty">Supervises &amp; supplies resources.</div></div>
-        <div class="chain-arrow">→</div>
-        <div class="step ah"><div class="role">Tier II</div><div class="who">Administrative Head</div><div class="duty">Owns the system &amp; policy compliance.</div></div>
-        <div class="chain-arrow">→</div>
-        <div class="step ph"><div class="role">Tier I</div><div class="who">Political Head</div><div class="duty">Owns the budget &amp; policy call.</div></div>
-      </div>
-      <div class="mini-flow">
-        <div class="box">FIR filed → becomes a Task</div>
-        <div class="ar">→</div>
-        <div class="box hot">EO investigates, 30‑day target</div>
-        <div class="ar">→</div>
-        <div class="box">RO reviews at Day 10 &amp; 20</div>
-        <div class="ar">→</div>
-        <div class="box">AH/PH informed if still open past Day 30</div>
-      </div>
-      <div class="slide-ref">Legal text: <a href="#b2">The Bill, §3–5</a></div>
-    </div>
-  </section>
-
-  <section id="register">
-    <div class="slide">
-      <h2 class="title">How a Task Gets Created &amp; Tracked</h2>
-      <div class="lede">🗣️ Every task lives inside a government <b>File</b>. The moment that File opens, it must be registered on the Portal with a Task ID and named officers — before work begins, not after something goes wrong.</div>
-      <div class="slide-grid">
-        <ul class="bullets">
-          <li>Opening a File on a qualifying matter <b>creates the Task</b> and starts the clock.</li>
-          <li>Named officers, budget, deadline and milestones go on record on day one.</li>
-          <li>A durable <b>site board + QR code</b> is put up at the actual worksite.</li>
-          <li>On the Portal: search by ID, QR, map or category — budget tracker, grievance tracker, safety‑certificate archive, and Ministerial scorecard, all in one place.</li>
-        </ul>
-        <div class="qrcard" style="margin:0;">
-          <div class="box">▦</div>
-          <div>
-            <strong>Site board, in real life</strong>
-            <div style="font-size:12.5px;">Task ID: RJ‑PWD‑2026‑00417 &middot; EO: [Name] &middot; RO: [Name] &middot; Due: [Date]</div>
-            <small>Scan → live Register entry: full HTAC, budget, inspection reports, one‑tap grievance form.</small>
-          </div>
-        </div>
-      </div>
-      <div class="slide-ref">Legal text: <a href="#b2">The Bill, §3, 6–9</a></div>
-    </div>
-  </section>
-
-  <section id="diligence">
-    <div class="slide">
-      <h2 class="title">Rehearse First, Open Later — and Penalties by Tier</h2>
-      <div class="lede">🗣️ Before a metro opens or a mela starts, someone signs a safety checklist — <b>publicly</b>. Skipping it is punishable even if nothing goes wrong.</div>
-      <div class="mini-flow" style="margin-bottom:14px;">
-        <div class="box">Safety docs certified (EO logs, RO verifies)</div>
-        <div class="ar">→</div>
-        <div class="box hot">Independent Dry Run — trial, mock drill, or rehearsal</div>
-        <div class="ar">→</div>
-        <div class="box">Cleared to open / proceed</div>
-      </div>
-      <div class="mini-flow">
-        <div class="box danger">Death or grievous injury occurs</div>
-        <div class="ar">→</div>
-        <div class="box danger">EO+RO suspended · FIR mandatory · 15‑day compensation</div>
-        <div class="ar">→</div>
-        <div class="box">Inquiry then decides who, if anyone, is at fault</div>
-      </div>
-      <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:13px; color:var(--muted); margin:14px 0;">Every failure gets a <b>two-stage appeal</b> — departmental first, then a fully independent District/State/Central Accountability Officer — before any of the punishments below are finalised.</p>
-      <table style="margin:0;">
-        <tr><th>Tier</th><th>Minor</th><th>Major</th><th>Extreme</th></tr>
-        <tr><td><span class="pill eo">EO</span></td><td>Censure + corrective plan</td><td>Withheld increment, demotion</td><td>Suspension → dismissal + criminal referral</td></tr>
-        <tr><td><span class="pill ro">RO</span></td><td>Censure</td><td>Recovery of loss</td><td>Compulsory retirement</td></tr>
-        <tr><td><span class="pill ah">AH</span></td><td>Reprimand</td><td>Corrective action plan</td><td>Referral to disciplinary authority</td></tr>
-        <tr><td><span class="pill ph">PH</span></td><td>—</td><td>—</td><td>Statement of Task Failure before the House + public</td></tr>
-      </table>
-      <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; font-size:12.5px; color:var(--muted); margin:10px 0 0;">Runs alongside — not instead of — criminal prosecution where the conduct is also a crime.</p>
-      <div class="slide-ref">Legal text: <a href="#b2">The Bill, §12–15</a> &middot; <a href="#b4">§24–28</a></div>
-    </div>
-  </section>
-
-  <section id="removal">
-    <div class="slide">
-      <h2 class="title">How a Minister Actually Leaves Office</h2>
-      <div class="lede">🗣️ Only the PM/CM can effectively remove a Minister — no law can change that. BHAGAT keeps a public scorecard instead, forcing that choice into daylight.</div>
-      <div class="appeal-flow">
-        <div class="stage">
-          <span class="tag2">Step 1</span>
-          <h4>Public Scorecard</h4>
-          <p>Every failure/overrun adds to a permanent, named record on the Portal.</p>
-        </div>
-        <div class="arrow">→</div>
-        <div class="stage">
-          <span class="tag2">Step 2</span>
-          <h4>Public Hearing</h4>
-          <p>3rd strike, or 1 death, triggers a hearing before the SAO/CAO.</p>
-        </div>
-        <div class="arrow">→</div>
-        <div class="stage">
-          <span class="tag2">Step 3</span>
-          <h4>Forced Political Choice</h4>
-          <p>Record goes to PM/CM &amp; Speaker — 30 days to remove, or publicly justify keeping the Minister.</p>
-        </div>
-      </div>
-      <div class="slide-ref">Legal text: <a href="#b5">The Bill, §29–31</a></div>
-    </div>
-  </section>
-
-  <section id="submit">
-    <div class="submit-cta">
-      <h2>Support or Comment on This Draft</h2>
-      <p>This is a citizen-drafted concept note, not a Bill before Parliament. If you support the idea, want to suggest a change, or want to help take it further, submit your name and comments below.</p>
-      <a class="submit-btn" href="PASTE_YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener">Submit Your Submission →</a>
-      <small>Opens a short Google Form — name, email, and your comment or support statement.</small>
-    </div>
-  </section>
-
-</main>
-
-</section>
 
 <section id="bill">
 <div class="part-label">
@@ -1033,10 +888,19 @@
 </div>
 </section>
 
+<section id="submit">
+  <div class="submit-cta">
+    <h2>Submit Your Suggestion Regarding This Bill</h2>
+    <p>This is a citizen-drafted concept note, not a Bill before Parliament. If you spot a mistake, want to suggest a change, or want to support the idea, submit your name and comments below.</p>
+    <a class="submit-btn" href="PASTE_YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener">Submit Your Suggestion →</a>
+    <small>Opens a short Google Form — name, email, and your comment, correction or support statement.</small>
+  </div>
+</section>
+
 <footer>
   <div class="tricolor"></div>
   <p><strong>Drafting basis:</strong> Constitution of India (Art. 75(3), Art. 164(2), Art. 311, Art. 320(3)(c), Art. 324); applicable anti‑corruption law; applicable whistle‑blower protection law; Central Civil Services (Classification, Control and Appeal) Rules, 1965; the Metro Railways (Opening for Public Carriage of Passengers) Rules, 2013 (Commissioner of Metro Railway Safety trial‑run and inspection requirement); National Disaster Management Authority guidance on crowd management at places of mass gathering; and public reporting on the January 2025 Maha Kumbh Mela stampede. International practice reviewed: UK Accounting Officer system, the Swedish Parliamentary Ombudsman, Singapore's CPIB, New Zealand's State Sector Act, the US Inspector General Act, Estonia's X‑Road, and Australia's National Anti‑Corruption Commission.</p>
-  <p>This is a citizen‑authored discussion draft, not a Government of India Bill, named in tribute to Shaheed Bhagat Singh. <a class="anchor-back" href="#why">Back to top ↑</a></p>
+  <p>जय हिन्द 🇮🇳 वंदे मातरम् — This is a citizen‑authored discussion draft, not a Government of India Bill, named in tribute to Shaheed Bhagat Singh and Chandra Shekhar Azad. <a class="anchor-back" href="#top">Back to top ↑</a></p>
 </footer>
 
 </body>
